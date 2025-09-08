@@ -13,13 +13,11 @@
       animation: darkWave 20s ease infinite;
       color: #f1f5f9;
     }
-
     @keyframes darkWave {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
     #particles-js {
       position: fixed;
       width: 100%;
@@ -28,7 +26,6 @@
       top: 0;
       left: 0;
     }
-
     header {
       text-align: center;
       padding: 60px 20px;
@@ -44,7 +41,6 @@
       transition: transform 0.3s ease;
     }
     header img:hover { transform: scale(1.05); }
-
     header h1 {
       font-size: 3em;
       margin: 20px 0 10px;
@@ -55,7 +51,6 @@
       font-style: italic;
       color: #cbd5e1;
     }
-
     .btn {
       display: inline-block;
       background-color: #2563eb;
@@ -70,7 +65,6 @@
       overflow: hidden;
       z-index: 1;
     }
-
     .socials { margin-top: 25px; }
     .socials a {
       margin: 0 15px;
@@ -79,7 +73,6 @@
       transition: color 0.3s ease;
     }
     .socials a:hover { color: #facc15; }
-
     section {
       max-width: 1000px;
       margin: 40px auto;
@@ -103,39 +96,38 @@
       transform: translateY(30px);
       animation: fadeInUp 1s ease forwards;
     }
-
     @keyframes fadeInUp {
       to { opacity: 1; transform: translateY(0); }
     }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-      display: flex;
-      flex-wrap: wrap;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 15px;
     }
-    ul li {
+    .skill {
       background: #1e293b;
-      color: #f1f5f9;
-      padding: 12px 20px;
-      border-radius: 25px;
-      font-weight: 600;
-      font-size: 1em;
-      flex: 1 1 calc(50% - 30px);
+      padding: 15px;
+      border-radius: 12px;
       text-align: center;
-      transition: background-color 0.3s;
+      transition: background 0.3s;
+      font-size: 1em;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
     }
-    ul li:hover { background-color: #334155; }
-
-    .project { padding: 12px 0; }
+    .skill i { font-size: 1.5em; }
+    .skill:hover { background: #334155; }
+    .project {
+      padding: 12px 0;
+      cursor: pointer;
+    }
     .project-details {
       font-size: 1.1em;
       font-weight: 600;
       color: #e2e8f0;
-      cursor: pointer;
     }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -145,37 +137,33 @@
       font-size: 1em;
       margin-top: 60px;
     }
-
     /* Lightbox */
     .lightbox {
       display: none;
       position: fixed;
-      z-index: 1000;
-      padding: 40px;
-      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      overflow: auto;
-      text-align: center;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
     }
     .lightbox img {
-      max-width: 80%;
-      margin: 15px auto;
+      max-width: 90%;
+      max-height: 80%;
+      margin: 10px;
       border-radius: 10px;
-      display: block;
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
     }
-    .lightbox:target { display: block; }
+    .lightbox:target {
+      display: flex;
+    }
     .close {
       position: absolute;
-      top: 20px; right: 30px;
-      color: #fff;
-      font-size: 40px;
+      top: 20px; right: 40px;
+      font-size: 2em;
+      color: white;
       text-decoration: none;
-      font-weight: bold;
-    }
-
-    @media (max-width: 600px) {
-      ul li { flex: 1 1 100%; }
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"/>
@@ -184,13 +172,10 @@
   <div id="particles-js"></div>
 
   <header>
-    <!-- صورتك -->
     <img src="image/profile.jpg" alt="Yousef Sabry Photo" />
     <h1>Yousef Sabry</h1>
     <p>Android Developer | OOP Enthusiast | Problem Solver</p>
-    <!-- CV -->
     <a class="btn" href="Yousef-Sabry-CV.pdf" target="_blank" rel="noopener noreferrer">📄 Download CV</a>
-    <!-- Socials -->
     <div class="socials">
       <a href="https://www.linkedin.com/in/yousef-sabry-a64983338" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/yousefsabry74" target="_blank"><i class="fab fa-github"></i></a>
@@ -202,23 +187,64 @@
     <h2>About Me</h2>
     <div class="card">
       <p>
-        I am a Computer Science student at Mansoura University.
+        I am a Computer Science student at Mansoura University. <br>
         I specialize in Android development using Kotlin and Jetpack Compose,
-        with a strong foundation in Object-Oriented Programming and app security.
+        with a strong foundation in Object-Oriented Programming and app security. <br><br>
+        🎓 I trained at <strong>NTI</strong> and <strong>DEPI</strong>, gaining hands-on experience.
       </p>
+    </div>
+
+    <h2>Skills</h2>
+
+    <!-- Application Development -->
+    <div class="card">
+      <h3>📱 Application Development</h3>
+      <div class="skills-grid">
+        <div class="skill"><i class="fab fa-android"></i><span>Kotlin & Android</span></div>
+        <div class="skill"><i class="fas fa-mobile-alt"></i><span>Jetpack Compose</span></div>
+        <div class="skill"><i class="fas fa-database"></i><span>Firebase</span></div>
+        <div class="skill"><i class="fas fa-plug"></i><span>REST APIs</span></div>
+        <div class="skill"><i class="fab fa-google-play"></i><span>Publishing Apps</span></div>
+        <div class="skill"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="skill"><i class="fas fa-code"></i><span>C#</span></div>
+      </div>
+    </div>
+
+    <!-- Networking & Security -->
+    <div class="card">
+      <h3>🌐 Networking & Security</h3>
+      <div class="skills-grid">
+        <div class="skill"><i class="fas fa-network-wired"></i><span>Networking</span></div>
+        <div class="skill"><i class="fas fa-lock"></i><span>Cybersecurity Basics</span></div>
+        <div class="skill"><i class="fab fa-git-alt"></i><span>Git & GitHub</span></div>
+        <div class="skill"><i class="fas fa-vial"></i><span>Unit Testing</span></div>
+        <div class="skill"><i class="fas fa-cubes"></i><span>OOP Principles</span></div>
+      </div>
+    </div>
+
+    <!-- Additional / Soft Skills -->
+    <div class="card">
+      <h3>💡 Additional / Soft Skills</h3>
+      <div class="skills-grid">
+        <div class="skill"><i class="fas fa-puzzle-piece"></i><span>Problem Solving</span></div>
+        <div class="skill"><i class="fas fa-users"></i><span>Teamwork</span></div>
+        <div class="skill"><i class="fas fa-comments"></i><span>Communication</span></div>
+        <div class="skill"><i class="fas fa-clock"></i><span>Time Management</span></div>
+        <div class="skill"><i class="fas fa-lightbulb"></i><span>Creativity</span></div>
+        <div class="skill"><i class="fas fa-handshake"></i><span>Adaptability</span></div>
+      </div>
     </div>
 
     <h2>Projects</h2>
     <div class="card">
-      <!-- Login App -->
       <div class="project">
-        <a href="#loginApp"><div class="project-details">Login/Register App – Kotlin + Firebase Authentication</div></a>
+        <a href="#loginApp"><div class="project-details">Login/Register App – Kotlin + Firebase</div></a>
       </div>
-      <!-- Lightbox -->
-      <div id="loginApp" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="image/login1.jpg" alt="Login App Screenshot 1">
-        <img src="image/login2.jpg" alt="Login App Screenshot 2">
+      <div class="project">
+        <div class="project-details">Weather App – REST API + Retrofit + MVVM</div>
+      </div>
+      <div class="project">
+        <div class="project-details">Future Projects – Android Apps with enhanced security</div>
       </div>
     </div>
   </section>
@@ -226,6 +252,13 @@
   <footer>
     &copy; 2025 Yousef Sabry. All rights reserved.
   </footer>
+
+  <!-- Lightbox for Project Images -->
+  <div id="loginApp" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="image/login1.jpg" alt="Login App Screenshot 1">
+    <img src="image/login2.jpg" alt="Login App Screenshot 2">
+  </div>
 
   <!-- particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -239,12 +272,15 @@
         "color": { "value": "#ffffff" }
       },
       "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "repulse" } }
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
+        }
       }
     });
   </script>
 </body>
 </html>
+
 
 
 
