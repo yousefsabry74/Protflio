@@ -12,7 +12,6 @@
       background-size: 800% 800%;
       animation: darkWave 20s ease infinite;
       color: #f1f5f9;
-      scroll-behavior: smooth;
     }
 
     @keyframes darkWave {
@@ -30,88 +29,14 @@
       left: 0;
     }
 
-    /* ===== NAVBAR ===== */
-    nav {
-      background: rgba(0,0,0,0.6);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      backdrop-filter: blur(10px);
-    }
-
-    nav .logo {
-      font-size: 1.3em;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li {
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #facc15;
-    }
-
-    /* Hamburger button */
-    .hamburger {
-      display: none;
-      font-size: 1.8em;
-      cursor: pointer;
-      color: #fff;
-      background: none;
-      border: none;
-    }
-
-    /* Mobile menu */
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background: rgba(0,0,0,0.85);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        padding: 15px 0;
-        border-radius: 8px;
-      }
-      nav ul.show {
-        display: flex;
-      }
-      nav ul li {
-        margin: 10px 0;
-        text-align: center;
-      }
-      .hamburger {
-        display: block;
-      }
-    }
-
     header {
       text-align: center;
-      padding: 120px 20px 60px;
+      padding: 60px 20px;
       color: white;
     }
     header img {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       border: 4px solid white;
       box-shadow: 0 0 15px rgba(255,255,255,0.4);
@@ -141,7 +66,9 @@
       font-weight: 600;
       font-size: 1.1em;
       box-shadow: 0 3px 10px rgba(0,0,0,0.4);
-      margin-top: 10px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
 
     .socials { margin-top: 25px; }
@@ -156,7 +83,7 @@
     section {
       max-width: 1000px;
       margin: 40px auto;
-      padding: 80px 20px 0;
+      padding: 0 20px;
     }
     h2 {
       font-size: 2em;
@@ -172,6 +99,13 @@
       margin-bottom: 35px;
       backdrop-filter: blur(10px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
     }
 
     ul {
@@ -199,12 +133,7 @@
       font-size: 1.1em;
       font-weight: 600;
       color: #e2e8f0;
-    }
-    .description {
-      font-size: 0.95em;
-      color: #cbd5e1;
-      margin-top: 5px;
-      margin-left: 15px;
+      cursor: pointer;
     }
 
     footer {
@@ -216,29 +145,52 @@
       font-size: 1em;
       margin-top: 60px;
     }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.9);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      text-align: center;
+    }
+    .lightbox img {
+      max-width: 80%;
+      margin: 15px auto;
+      border-radius: 10px;
+      display: block;
+    }
+    .lightbox:target { display: block; }
+    .close {
+      position: absolute;
+      top: 20px; right: 30px;
+      color: #fff;
+      font-size: 40px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      ul li { flex: 1 1 100%; }
+    }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"/>
 </head>
 <body>
   <div id="particles-js"></div>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav>
-    <div class="logo">Yousef</div>
-    <button class="hamburger"><i class="fas fa-bars"></i></button>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-    </ul>
-  </nav>
-
   <header>
+    <!-- صورتك -->
     <img src="image/profile.jpg" alt="Yousef Sabry Photo" />
     <h1>Yousef Sabry</h1>
     <p>Android Developer | OOP Enthusiast | Problem Solver</p>
+    <!-- CV -->
     <a class="btn" href="Yousef-Sabry-CV.pdf" target="_blank" rel="noopener noreferrer">📄 Download CV</a>
+    <!-- Socials -->
     <div class="socials">
       <a href="https://www.linkedin.com/in/yousef-sabry-a64983338" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/yousefsabry74" target="_blank"><i class="fab fa-github"></i></a>
@@ -246,91 +198,28 @@
     </div>
   </header>
 
-  <section id="about">
+  <section>
     <h2>About Me</h2>
     <div class="card">
       <p>
         I am a Computer Science student at Mansoura University.
         I specialize in Android development using Kotlin and Jetpack Compose,
         with a strong foundation in Object-Oriented Programming and app security.
-        I have completed training programs at DEPI and NTI.
       </p>
     </div>
-  </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-      <h3>📱 Application Development</h3>
-      <ul>
-        <li>Kotlin & Android Development</li>
-        <li>Jetpack Compose</li>
-        <li>Firebase Authentication & Firestore</li>
-        <li>REST APIs & Retrofit</li>
-        <li>UI/UX Design Principles</li>
-        <li>Unit Testing & Debugging</li>
-        <li>Publishing Apps to Play Store</li>
-      </ul>
-
-      <h3>🌐 Networking & Security</h3>
-      <ul>
-        <li>Networking Fundamentals</li>
-        <li>Cybersecurity Basics</li>
-        <li>Secure App Development</li>
-      </ul>
-
-      <h3>💡 Extra Skills</h3>
-      <ul>
-        <li>Problem Solving</li>
-        <li>Object-Oriented Programming (OOP)</li>
-        <li>Git & GitHub Workflow</li>
-        <li>C#</li>
-        <li>Python</li>
-        <li>Soft Skills: Communication, Teamwork, Time Management</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="projects">
     <h2>Projects</h2>
     <div class="card">
+      <!-- Login App -->
       <div class="project">
-        <div class="project-details">Login/Register App – Kotlin + Firebase Authentication</div>
-        <div class="description">A secure authentication system with email & password login using Firebase.</div>
+        <a href="#loginApp"><div class="project-details">Login/Register App – Kotlin + Firebase Authentication</div></a>
       </div>
-
-      <div class="project">
-        <div class="project-details">Weather App – REST API + Retrofit + MVVM</div>
-        <div class="description">An Android app displaying live weather forecasts using REST APIs.</div>
+      <!-- Lightbox -->
+      <div id="loginApp" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="image/login1.jpg" alt="Login App Screenshot 1">
+        <img src="image/login2.jpg" alt="Login App Screenshot 2">
       </div>
-
-      <div class="project">
-        <div class="project-details">Future Projects – Android Apps with enhanced security</div>
-        <div class="description">Upcoming apps focusing on advanced security and performance.</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="certificates">
-    <h2>Certificates & Training</h2>
-    <div class="card">
-      <h3>Android Application Development Training (Current)</h3>
-      <p><strong>Digital Egypt Pioneers Program (DEPI), Egypt</strong><br>
-      <em>June 2025 – Present</em></p>
-      <ul>
-        <li>Learning Kotlin and Android Compose to build modern apps.</li>
-        <li>Studying Android security essentials and UI/UX fundamentals.</li>
-        <li>Practicing Git, GitHub, and functional documentation for projects.</li>
-      </ul>
-
-      <h3>Network Infrastructure Training</h3>
-      <p><strong>National Telecommunication Institute (NTI), Egypt</strong><br>
-      <em>June 2025 – July 2025</em></p>
-      <ul>
-        <li>Comprehensive training in Network Infrastructure.</li>
-        <li>Learning core concepts of network design, implementation, and security.</li>
-        <li>Building a strong foundation in networking.</li>
-      </ul>
     </div>
   </section>
 
@@ -338,7 +227,7 @@
     &copy; 2025 Yousef Sabry. All rights reserved.
   </footer>
 
-  <!-- Scripts -->
+  <!-- particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
@@ -353,16 +242,9 @@
         "events": { "onhover": { "enable": true, "mode": "repulse" } }
       }
     });
-
-    // toggle menu
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('nav ul');
-
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
-    });
   </script>
 </body>
 </html>
+
 
 
