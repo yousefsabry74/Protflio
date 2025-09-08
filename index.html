@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yousef Sabry | Portfolio</title>
   <style>
-    /* خلفية متحركة */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0; padding: 0;
@@ -19,7 +18,6 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
     #particles-js {
       position: fixed;
       width: 100%;
@@ -28,111 +26,147 @@
       top: 0;
       left: 0;
     }
-
-    header { text-align: center; padding: 60px 20px; color: white; }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      color: white;
+    }
     header img {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       border: 4px solid white;
-      box-shadow: 0 0 20px rgba(255,255,255,0.5);
+      box-shadow: 0 0 15px rgba(255,255,255,0.4);
       object-fit: cover;
       transition: transform 0.3s ease;
     }
     header img:hover { transform: scale(1.05); }
-    header h1 { font-size: 3em; margin: 20px 0 10px; font-weight: bold; }
-    header p { font-size: 1.2em; font-style: italic; color: #cbd5e1; }
-
-    .btn {
-      display: inline-block; background-color: #2563eb;
-      padding: 12px 25px; border-radius: 30px;
-      color: white; text-decoration: none; font-weight: 600;
-      font-size: 1.1em; box-shadow: 0 3px 10px rgba(0,0,0,0.4);
-      position: relative; overflow: hidden; z-index: 1;
+    header h1 {
+      font-size: 3em;
+      margin: 20px 0 10px;
+      font-weight: bold;
     }
-
+    header p {
+      font-size: 1.2em;
+      font-style: italic;
+      color: #cbd5e1;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #2563eb;
+      padding: 12px 25px;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
     .socials { margin-top: 25px; }
     .socials a {
-      margin: 0 15px; font-size: 1.8em; color: white;
+      margin: 0 15px;
+      font-size: 1.8em;
+      color: white;
       transition: color 0.3s ease;
     }
     .socials a:hover { color: #facc15; }
-
-    section { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
     h2 {
-      font-size: 2em; color: white; border-bottom: 2px solid #fff;
-      padding-bottom: 10px; margin-bottom: 25px;
+      font-size: 2em;
+      color: white;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
     }
     .card {
       background-color: rgba(255,255,255,0.1);
-      border-radius: 15px; padding: 30px 25px; margin-bottom: 35px;
+      border-radius: 15px;
+      padding: 30px 25px;
+      margin-bottom: 35px;
       backdrop-filter: blur(10px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      opacity: 0; transform: translateY(30px);
+      opacity: 0;
+      transform: translateY(30px);
       animation: fadeInUp 1s ease forwards;
     }
     @keyframes fadeInUp {
       to { opacity: 1; transform: translateY(0); }
     }
-
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 20px;
-      text-align: center;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
     }
     .skill {
       background: #1e293b;
       padding: 15px;
-      border-radius: 15px;
-      transition: transform 0.3s ease;
+      border-radius: 12px;
+      text-align: center;
+      transition: background 0.3s;
+      font-size: 1em;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
     }
-    .skill:hover { transform: translateY(-5px); background: #334155; }
-    .skill i { font-size: 2em; margin-bottom: 10px; display: block; color: #facc15; }
-    .skill span { font-weight: 600; font-size: 1em; }
-
-    .project { padding: 12px 0; cursor: pointer; }
+    .skill i { font-size: 1.5em; }
+    .skill:hover { background: #334155; }
+    .project {
+      padding: 12px 0;
+      cursor: pointer;
+    }
     .project-details {
-      font-size: 1.1em; font-weight: 600; color: #e2e8f0;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #e2e8f0;
     }
-
     footer {
-      text-align: center; padding: 20px;
-      background: rgba(0,0,0,0.6); color: white;
-      font-weight: 600; font-size: 1em; margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      font-weight: 600;
+      font-size: 1em;
+      margin-top: 60px;
     }
-
-    /* Modal */
-    .modal {
-      display: none; position: fixed; z-index: 1000;
-      left: 0; top: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8); justify-content: center; align-items: center;
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
     }
-    .modal-content {
-      position: relative; max-width: 90%; max-height: 90%;
-    }
-    .modal img {
-      max-width: 100%;
-      max-height: 80vh;
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      margin: 10px;
       border-radius: 10px;
-      display: block;
-      margin: auto;
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    }
+    .lightbox:target {
+      display: flex;
     }
     .close {
-      position: absolute; top: 10px; right: 20px;
-      color: white; font-size: 30px; cursor: pointer;
+      position: absolute;
+      top: 20px; right: 40px;
+      font-size: 2em;
+      color: white;
+      text-decoration: none;
     }
-    .prev, .next {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      font-size: 40px; color: white; cursor: pointer;
-      padding: 10px;
-    }
-    .prev { left: -60px; }
-    .next { right: -60px; }
   </style>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"/>
 </head>
 <body>
   <div id="particles-js"></div>
@@ -153,38 +187,64 @@
     <h2>About Me</h2>
     <div class="card">
       <p>
-        I am a Computer Science student at Mansoura University.<br>
-        Specialized in Android development using Kotlin and Jetpack Compose, 
-        with a strong foundation in Object-Oriented Programming and app security.<br>
-        I have successfully completed training at <b>NTI (National Telecommunication Institute)</b> 
-        and <b>DEPI (Digital Egypt Pioneers Initiative)</b>.
+        I am a Computer Science student at Mansoura University. <br>
+        I specialize in Android development using Kotlin and Jetpack Compose,
+        with a strong foundation in Object-Oriented Programming and app security. <br><br>
+        🎓 I trained at <strong>NTI</strong> and <strong>DEPI</strong>, gaining hands-on experience.
       </p>
     </div>
 
     <h2>Skills</h2>
+
+    <!-- Application Development -->
     <div class="card">
+      <h3>📱 Application Development</h3>
       <div class="skills-grid">
         <div class="skill"><i class="fab fa-android"></i><span>Kotlin & Android</span></div>
         <div class="skill"><i class="fas fa-mobile-alt"></i><span>Jetpack Compose</span></div>
-        <div class="skill"><i class="fas fa-cubes"></i><span>OOP</span></div>
         <div class="skill"><i class="fas fa-database"></i><span>Firebase</span></div>
-        <div class="skill"><i class="fas fa-puzzle-piece"></i><span>Problem Solving</span></div>
-        <div class="skill"><i class="fas fa-network-wired"></i><span>Networking</span></div>
-        <div class="skill"><i class="fas fa-lock"></i><span>Cybersecurity Basics</span></div>
         <div class="skill"><i class="fas fa-plug"></i><span>REST APIs</span></div>
-        <div class="skill"><i class="fas fa-pencil-ruler"></i><span>UI/UX</span></div>
-        <div class="skill"><i class="fab fa-git-alt"></i><span>Git & GitHub</span></div>
-        <div class="skill"><i class="fas fa-vial"></i><span>Unit Testing</span></div>
         <div class="skill"><i class="fab fa-google-play"></i><span>Publishing Apps</span></div>
         <div class="skill"><i class="fab fa-python"></i><span>Python</span></div>
         <div class="skill"><i class="fas fa-code"></i><span>C#</span></div>
       </div>
     </div>
 
+    <!-- Networking & Security -->
+    <div class="card">
+      <h3>🌐 Networking & Security</h3>
+      <div class="skills-grid">
+        <div class="skill"><i class="fas fa-network-wired"></i><span>Networking</span></div>
+        <div class="skill"><i class="fas fa-lock"></i><span>Cybersecurity Basics</span></div>
+        <div class="skill"><i class="fab fa-git-alt"></i><span>Git & GitHub</span></div>
+        <div class="skill"><i class="fas fa-vial"></i><span>Unit Testing</span></div>
+        <div class="skill"><i class="fas fa-cubes"></i><span>OOP Principles</span></div>
+      </div>
+    </div>
+
+    <!-- Additional / Soft Skills -->
+    <div class="card">
+      <h3>💡 Additional / Soft Skills</h3>
+      <div class="skills-grid">
+        <div class="skill"><i class="fas fa-puzzle-piece"></i><span>Problem Solving</span></div>
+        <div class="skill"><i class="fas fa-users"></i><span>Teamwork</span></div>
+        <div class="skill"><i class="fas fa-comments"></i><span>Communication</span></div>
+        <div class="skill"><i class="fas fa-clock"></i><span>Time Management</span></div>
+        <div class="skill"><i class="fas fa-lightbulb"></i><span>Creativity</span></div>
+        <div class="skill"><i class="fas fa-handshake"></i><span>Adaptability</span></div>
+      </div>
+    </div>
+
     <h2>Projects</h2>
     <div class="card">
-      <div class="project" onclick="openModal(0)">
-        <div class="project-details">Login/Register App – Kotlin + Firebase Authentication</div>
+      <div class="project">
+        <a href="#loginApp"><div class="project-details">Login/Register App – Kotlin + Firebase</div></a>
+      </div>
+      <div class="project">
+        <div class="project-details">Weather App – REST API + Retrofit + MVVM</div>
+      </div>
+      <div class="project">
+        <div class="project-details">Future Projects – Android Apps with enhanced security</div>
       </div>
     </div>
   </section>
@@ -193,14 +253,11 @@
     &copy; 2025 Yousef Sabry. All rights reserved.
   </footer>
 
-  <!-- Modal -->
-  <div id="imageModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-      <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
-      <img id="modalImage" src="">
-      <span class="next" onclick="changeSlide(1)">&#10095;</span>
-    </div>
+  <!-- Lightbox for Project Images -->
+  <div id="loginApp" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="image/login1.jpg" alt="Login App Screenshot 1">
+    <img src="image/login2.jpg" alt="Login App Screenshot 2">
   </div>
 
   <!-- particles.js -->
@@ -215,38 +272,11 @@
         "color": { "value": "#ffffff" }
       },
       "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "repulse" } }
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
+        }
       }
     });
-
-    // Slider Images
-    const projectImages = [
-      ["image/login1.png", "image/login2.png"]
-    ];
-    let currentProject = 0;
-    let currentSlide = 0;
-
-    function openModal(projectIndex) {
-      currentProject = projectIndex;
-      currentSlide = 0;
-      document.getElementById("imageModal").style.display = "flex";
-      showSlide();
-    }
-
-    function closeModal() {
-      document.getElementById("imageModal").style.display = "none";
-    }
-
-    function changeSlide(direction) {
-      const images = projectImages[currentProject];
-      currentSlide = (currentSlide + direction + images.length) % images.length;
-      showSlide();
-    }
-
-    function showSlide() {
-      const images = projectImages[currentProject];
-      document.getElementById("modalImage").src = images[currentSlide];
-    }
   </script>
 </body>
 </html>
