@@ -12,6 +12,7 @@
       background-size: 800% 800%;
       animation: darkWave 20s ease infinite;
       color: #f1f5f9;
+      scroll-behavior: smooth;
     }
 
     @keyframes darkWave {
@@ -29,9 +30,83 @@
       left: 0;
     }
 
+    /* ===== NAVBAR ===== */
+    nav {
+      background: rgba(0,0,0,0.6);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    nav .logo {
+      font-size: 1.3em;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #facc15;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      font-size: 1.8em;
+      cursor: pointer;
+      color: #fff;
+      background: none;
+      border: none;
+    }
+
+    /* Mobile menu */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(0,0,0,0.85);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px 0;
+        border-radius: 8px;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      nav ul li {
+        margin: 10px 0;
+        text-align: center;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
     header {
       text-align: center;
-      padding: 60px 20px;
+      padding: 120px 20px 60px;
       color: white;
     }
     header img {
@@ -66,9 +141,7 @@
       font-weight: 600;
       font-size: 1.1em;
       box-shadow: 0 3px 10px rgba(0,0,0,0.4);
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
+      margin-top: 10px;
     }
 
     .socials { margin-top: 25px; }
@@ -83,7 +156,7 @@
     section {
       max-width: 1000px;
       margin: 40px auto;
-      padding: 0 20px;
+      padding: 80px 20px 0;
     }
     h2 {
       font-size: 2em;
@@ -99,13 +172,6 @@
       margin-bottom: 35px;
       backdrop-filter: blur(10px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
     }
 
     ul {
@@ -156,6 +222,18 @@
 <body>
   <div id="particles-js"></div>
 
+  <!-- ===== NAVBAR ===== -->
+  <nav>
+    <div class="logo">Yousef</div>
+    <button class="hamburger"><i class="fas fa-bars"></i></button>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+    </ul>
+  </nav>
+
   <header>
     <img src="image/profile.jpg" alt="Yousef Sabry Photo" />
     <h1>Yousef Sabry</h1>
@@ -168,7 +246,7 @@
     </div>
   </header>
 
-  <section>
+  <section id="about">
     <h2>About Me</h2>
     <div class="card">
       <p>
@@ -178,7 +256,9 @@
         I have completed training programs at DEPI and NTI.
       </p>
     </div>
+  </section>
 
+  <section id="skills">
     <h2>Skills</h2>
     <div class="card">
       <h3>📱 Application Development</h3>
@@ -209,7 +289,9 @@
         <li>Soft Skills: Communication, Teamwork, Time Management</li>
       </ul>
     </div>
+  </section>
 
+  <section id="projects">
     <h2>Projects</h2>
     <div class="card">
       <div class="project">
@@ -227,7 +309,9 @@
         <div class="description">Upcoming apps focusing on advanced security and performance.</div>
       </div>
     </div>
+  </section>
 
+  <section id="certificates">
     <h2>Certificates & Training</h2>
     <div class="card">
       <h3>Android Application Development Training (Current)</h3>
@@ -254,6 +338,7 @@
     &copy; 2025 Yousef Sabry. All rights reserved.
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
@@ -268,6 +353,16 @@
         "events": { "onhover": { "enable": true, "mode": "repulse" } }
       }
     });
+
+    // toggle menu
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav ul');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
   </script>
 </body>
 </html>
+
+
