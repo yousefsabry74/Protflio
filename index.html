@@ -31,9 +31,13 @@
 
     header { text-align: center; padding: 60px 20px; color: white; }
     header img {
-      width: 140px; height: 140px; border-radius: 50%;
-      border: 4px solid white; box-shadow: 0 0 15px rgba(255,255,255,0.4);
-      object-fit: cover; transition: transform 0.3s ease;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 0 20px rgba(255,255,255,0.5);
+      object-fit: cover;
+      transition: transform 0.3s ease;
     }
     header img:hover { transform: scale(1.05); }
     header h1 { font-size: 3em; margin: 20px 0 10px; font-weight: bold; }
@@ -71,7 +75,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Skills Grid */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -82,21 +85,11 @@
       background: #1e293b;
       padding: 15px;
       border-radius: 15px;
-      transition: transform 0.3s, background 0.3s;
+      transition: transform 0.3s ease;
     }
-    .skill:hover {
-      transform: translateY(-5px);
-      background: #334155;
-    }
-    .skill i {
-      font-size: 2em;
-      margin-bottom: 10px;
-      color: #facc15;
-    }
-    .skill p {
-      margin: 0;
-      font-weight: 600;
-    }
+    .skill:hover { transform: translateY(-5px); background: #334155; }
+    .skill i { font-size: 2em; margin-bottom: 10px; display: block; color: #facc15; }
+    .skill span { font-weight: 600; font-size: 1em; }
 
     .project { padding: 12px 0; cursor: pointer; }
     .project-details {
@@ -116,10 +109,14 @@
       background: rgba(0,0,0,0.8); justify-content: center; align-items: center;
     }
     .modal-content {
-      position: relative; max-width: 80%; max-height: 80%;
+      position: relative; max-width: 90%; max-height: 90%;
     }
     .modal img {
-      width: 100%; height: auto; border-radius: 10px;
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 10px;
+      display: block;
+      margin: auto;
     }
     .close {
       position: absolute; top: 10px; right: 20px;
@@ -156,47 +153,38 @@
     <h2>About Me</h2>
     <div class="card">
       <p>
-        I am a Computer Science student at Mansoura University.  
-        I specialize in Android development using Kotlin and Jetpack Compose,  
-        with a strong foundation in Object-Oriented Programming and app security.  
-        I have also completed professional training programs at <b>NTI</b> and <b>DEPI</b>,  
-        enhancing my skills in software development and industry practices.
+        I am a Computer Science student at Mansoura University.<br>
+        Specialized in Android development using Kotlin and Jetpack Compose, 
+        with a strong foundation in Object-Oriented Programming and app security.<br>
+        I have successfully completed training at <b>NTI (National Telecommunication Institute)</b> 
+        and <b>DEPI (Digital Egypt Pioneers Initiative)</b>.
       </p>
     </div>
 
     <h2>Skills</h2>
     <div class="card">
       <div class="skills-grid">
-        <div class="skill"><i class="fa-brands fa-android"></i><p>Kotlin & Android</p></div>
-        <div class="skill"><i class="fa-solid fa-mobile"></i><p>Jetpack Compose</p></div>
-        <div class="skill"><i class="fa-solid fa-cubes"></i><p>OOP</p></div>
-        <div class="skill"><i class="fa-solid fa-database"></i><p>Firebase</p></div>
-        <div class="skill"><i class="fa-brands fa-python"></i><p>Python</p></div>
-        <div class="skill"><i class="fa-solid fa-code"></i><p>C#</p></div>
-        <div class="skill"><i class="fa-solid fa-shield-halved"></i><p>Cybersecurity Basics</p></div>
-        <div class="skill"><i class="fa-solid fa-network-wired"></i><p>Networking</p></div>
-        <div class="skill"><i class="fa-solid fa-link"></i><p>REST APIs</p></div>
-        <div class="skill"><i class="fa-solid fa-pencil-ruler"></i><p>UI/UX Principles</p></div>
-        <div class="skill"><i class="fa-brands fa-git-alt"></i><p>Git & GitHub</p></div>
-        <div class="skill"><i class="fa-solid fa-vial"></i><p>Unit Testing</p></div>
-        <div class="skill"><i class="fa-solid fa-upload"></i><p>Play Store Publish</p></div>
-        <div class="skill"><i class="fa-solid fa-lightbulb"></i><p>Problem Solving</p></div>
+        <div class="skill"><i class="fab fa-android"></i><span>Kotlin & Android</span></div>
+        <div class="skill"><i class="fas fa-mobile-alt"></i><span>Jetpack Compose</span></div>
+        <div class="skill"><i class="fas fa-cubes"></i><span>OOP</span></div>
+        <div class="skill"><i class="fas fa-database"></i><span>Firebase</span></div>
+        <div class="skill"><i class="fas fa-puzzle-piece"></i><span>Problem Solving</span></div>
+        <div class="skill"><i class="fas fa-network-wired"></i><span>Networking</span></div>
+        <div class="skill"><i class="fas fa-lock"></i><span>Cybersecurity Basics</span></div>
+        <div class="skill"><i class="fas fa-plug"></i><span>REST APIs</span></div>
+        <div class="skill"><i class="fas fa-pencil-ruler"></i><span>UI/UX</span></div>
+        <div class="skill"><i class="fab fa-git-alt"></i><span>Git & GitHub</span></div>
+        <div class="skill"><i class="fas fa-vial"></i><span>Unit Testing</span></div>
+        <div class="skill"><i class="fab fa-google-play"></i><span>Publishing Apps</span></div>
+        <div class="skill"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="skill"><i class="fas fa-code"></i><span>C#</span></div>
       </div>
     </div>
 
     <h2>Projects</h2>
     <div class="card">
-      <!-- Login/Register App -->
       <div class="project" onclick="openModal(0)">
         <div class="project-details">Login/Register App – Kotlin + Firebase Authentication</div>
-      </div>
-      <!-- Weather App -->
-      <div class="project">
-        <div class="project-details">Weather App – REST API + Retrofit + MVVM</div>
-      </div>
-      <!-- Future Projects -->
-      <div class="project">
-        <div class="project-details">Future Projects – Android Apps with enhanced security</div>
       </div>
     </div>
   </section>
