@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yousef Sabry | Portfolio</title>
   <style>
-    /* خلفية متحركة داكنة */
+    /* خلفية متحركة */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0; padding: 0;
@@ -14,7 +14,6 @@
       animation: darkWave 20s ease infinite;
       color: #f1f5f9;
     }
-
     @keyframes darkWave {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -30,133 +29,86 @@
       left: 0;
     }
 
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      color: white;
-    }
+    header { text-align: center; padding: 60px 20px; color: white; }
     header img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      border: 4px solid white;
-      box-shadow: 0 0 15px rgba(255,255,255,0.4);
-      object-fit: cover;
-      transition: transform 0.3s ease;
+      width: 140px; height: 140px; border-radius: 50%;
+      border: 4px solid white; box-shadow: 0 0 15px rgba(255,255,255,0.4);
+      object-fit: cover; transition: transform 0.3s ease;
     }
     header img:hover { transform: scale(1.05); }
-
-    header h1 {
-      font-size: 3em;
-      margin: 20px 0 10px;
-      font-weight: bold;
-    }
-    header p {
-      font-size: 1.2em;
-      font-style: italic;
-      color: #cbd5e1;
-    }
+    header h1 { font-size: 3em; margin: 20px 0 10px; font-weight: bold; }
+    header p { font-size: 1.2em; font-style: italic; color: #cbd5e1; }
 
     .btn {
-      display: inline-block;
-      background-color: #2563eb;
-      padding: 12px 25px;
-      border-radius: 30px;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1em;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.4);
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
+      display: inline-block; background-color: #2563eb;
+      padding: 12px 25px; border-radius: 30px;
+      color: white; text-decoration: none; font-weight: 600;
+      font-size: 1.1em; box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+      position: relative; overflow: hidden; z-index: 1;
     }
 
     .socials { margin-top: 25px; }
     .socials a {
-      margin: 0 15px;
-      font-size: 1.8em;
-      color: white;
+      margin: 0 15px; font-size: 1.8em; color: white;
       transition: color 0.3s ease;
     }
     .socials a:hover { color: #facc15; }
 
-    section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+    section { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
     h2 {
-      font-size: 2em;
-      color: white;
-      border-bottom: 2px solid #fff;
-      padding-bottom: 10px;
-      margin-bottom: 25px;
+      font-size: 2em; color: white; border-bottom: 2px solid #fff;
+      padding-bottom: 10px; margin-bottom: 25px;
     }
     .card {
       background-color: rgba(255,255,255,0.1);
-      border-radius: 15px;
-      padding: 30px 25px;
-      margin-bottom: 35px;
+      border-radius: 15px; padding: 30px 25px; margin-bottom: 35px;
       backdrop-filter: blur(10px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      opacity: 0;
-      transform: translateY(30px);
+      opacity: 0; transform: translateY(30px);
       animation: fadeInUp 1s ease forwards;
     }
-
     @keyframes fadeInUp {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* skills icons */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 20px;
-      text-align: center;
-    }
-    .skill {
-      background: #1e293b;
-      border-radius: 15px;
-      padding: 20px;
-      transition: background-color 0.3s;
-    }
-    .skill:hover { background-color: #334155; }
-    .skill i, .skill img {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-    .skill img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
-    .skill span {
-      display: block;
-      font-weight: 600;
-      font-size: 1em;
-      color: #f1f5f9;
-    }
-
-    .project { padding: 12px 0; }
+    .project { padding: 12px 0; cursor: pointer; }
     .project-details {
-      font-size: 1.1em;
-      font-weight: 600;
-      color: #e2e8f0;
+      font-size: 1.1em; font-weight: 600; color: #e2e8f0;
     }
 
     footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      font-weight: 600;
-      font-size: 1em;
-      margin-top: 60px;
+      text-align: center; padding: 20px;
+      background: rgba(0,0,0,0.6); color: white;
+      font-weight: 600; font-size: 1em; margin-top: 60px;
     }
+
+    /* Modal */
+    .modal {
+      display: none; position: fixed; z-index: 1000;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8); justify-content: center; align-items: center;
+    }
+    .modal-content {
+      position: relative; max-width: 80%; max-height: 80%;
+    }
+    .modal img {
+      width: 100%; height: auto; border-radius: 10px;
+    }
+    .close {
+      position: absolute; top: 10px; right: 20px;
+      color: white; font-size: 30px; cursor: pointer;
+    }
+    .prev, .next {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      font-size: 40px; color: white; cursor: pointer;
+      padding: 10px;
+    }
+    .prev { left: -60px; }
+    .next { right: -60px; }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"/>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"/>
 </head>
 <body>
   <div id="particles-js"></div>
@@ -174,65 +126,28 @@
   </header>
 
   <section>
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        I am a Computer Science student at Mansoura University. 
-        I specialize in Android development using Kotlin and Jetpack Compose,
-        with a strong foundation in Object-Oriented Programming and app security. <br><br>
-        I also completed professional training programs at <b>DEPI</b> and <b>NTI</b>.
-      </p>
-    </div>
-
-    <h2>Skills</h2>
-    <div class="card">
-      <div class="skills-grid">
-        <div class="skill"><i class="fab fa-android"></i><span>Kotlin & Android</span></div>
-        <div class="skill"><i class="fas fa-mobile-alt"></i><span>Jetpack Compose</span></div>
-        <div class="skill"><i class="fas fa-cubes"></i><span>OOP</span></div>
-        <div class="skill"><i class="fas fa-fire"></i><span>Firebase</span></div>
-        <div class="skill"><i class="fas fa-code"></i><span>Problem Solving</span></div>
-        <div class="skill"><i class="fas fa-network-wired"></i><span>Networking & Security</span></div>
-        <div class="skill"><i class="fas fa-plug"></i><span>REST APIs & Retrofit</span></div>
-        <div class="skill"><i class="fas fa-paint-brush"></i><span>UI/UX Principles</span></div>
-        <div class="skill"><i class="fab fa-git-alt"></i><span>Git & GitHub</span></div>
-        <div class="skill"><i class="fas fa-vials"></i><span>Unit Testing</span></div>
-        <div class="skill"><i class="fab fa-google-play"></i><span>Publishing Apps</span></div>
-        <div class="skill"><i class="fab fa-python"></i><span>Python</span></div>
-        <div class="skill"><i class="fas fa-code"></i><span>C#</span></div>
-      </div>
-    </div>
-
     <h2>Projects</h2>
     <div class="card">
-      <!-- Project 1 -->
-      <div class="project">
-        <img src="image/login-app.jpg" alt="Login/Register App" 
-             style="max-width:100%; border-radius:10px; margin-bottom:15px; box-shadow:0 4px 12px rgba(0,0,0,0.4);">
+      <!-- المشروع -->
+      <div class="project" onclick="openModal(0)">
         <div class="project-details">Login/Register App – Kotlin + Firebase Authentication</div>
       </div>
-
-      <!-- Project 2 -->
-      <div class="project">
-        <div class="project-details">Weather App – REST API + Retrofit + MVVM</div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project">
-        <div class="project-details">Future Projects – Android Apps with enhanced security</div>
-      </div>
-    </div>
-
-    <h2>Certifications</h2>
-    <div class="card" style="text-align:center;">
-      <img src="image/nti-certificate.jpg" alt="NTI Certificate" style="max-width:100%; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.5);">
-      <p><b>NTI – National Telecommunication Institute</b></p>
     </div>
   </section>
 
   <footer>
     &copy; 2025 Yousef Sabry. All rights reserved.
   </footer>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+      <img id="modalImage" src="">
+      <span class="next" onclick="changeSlide(1)">&#10095;</span>
+    </div>
+  </div>
 
   <!-- particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -246,12 +161,38 @@
         "color": { "value": "#ffffff" }
       },
       "interactivity": {
-        "events": {
-          "onhover": { "enable": true, "mode": "repulse" }
-        }
+        "events": { "onhover": { "enable": true, "mode": "repulse" } }
       }
     });
+
+    // Slider Images
+    const projectImages = [
+      ["image/projects/login1.png", "image/projects/login2.png"]
+    ];
+    let currentProject = 0;
+    let currentSlide = 0;
+
+    function openModal(projectIndex) {
+      currentProject = projectIndex;
+      currentSlide = 0;
+      document.getElementById("imageModal").style.display = "flex";
+      showSlide();
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    function changeSlide(direction) {
+      const images = projectImages[currentProject];
+      currentSlide = (currentSlide + direction + images.length) % images.length;
+      showSlide();
+    }
+
+    function showSlide() {
+      const images = projectImages[currentProject];
+      document.getElementById("modalImage").src = images[currentSlide];
+    }
   </script>
 </body>
 </html>
-
