@@ -109,25 +109,35 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    ul li {
-      background: #1e293b;
-      color: #f1f5f9;
-      padding: 12px 20px;
-      border-radius: 25px;
-      font-weight: 600;
-      font-size: 1em;
-      flex: 1 1 calc(50% - 30px);
+    /* skills icons */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
       text-align: center;
+    }
+    .skill {
+      background: #1e293b;
+      border-radius: 15px;
+      padding: 20px;
       transition: background-color 0.3s;
     }
-    ul li:hover { background-color: #334155; }
+    .skill:hover { background-color: #334155; }
+    .skill i, .skill img {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .skill img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    .skill span {
+      display: block;
+      font-weight: 600;
+      font-size: 1em;
+      color: #f1f5f9;
+    }
 
     .project { padding: 12px 0; }
     .project-details {
@@ -145,10 +155,6 @@
       font-size: 1em;
       margin-top: 60px;
     }
-
-    @media (max-width: 600px) {
-      ul li { flex: 1 1 100%; }
-    }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"/>
 </head>
@@ -156,13 +162,10 @@
   <div id="particles-js"></div>
 
   <header>
-    <!-- صورتك -->
     <img src="image/profile.jpg" alt="Yousef Sabry Photo" />
     <h1>Yousef Sabry</h1>
     <p>Android Developer | OOP Enthusiast | Problem Solver</p>
-    <!-- CV -->
     <a class="btn" href="Yousef-Sabry-CV.pdf" target="_blank" rel="noopener noreferrer">📄 Download CV</a>
-    <!-- Socials -->
     <div class="socials">
       <a href="https://www.linkedin.com/in/yousef-sabry-a64983338" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/yousefsabry74" target="_blank"><i class="fab fa-github"></i></a>
@@ -174,27 +177,30 @@
     <h2>About Me</h2>
     <div class="card">
       <p>
-        I am a Computer Science student at Mansoura University.
+        I am a Computer Science student at Mansoura University. 
         I specialize in Android development using Kotlin and Jetpack Compose,
-        with a strong foundation in Object-Oriented Programming and app security.
+        with a strong foundation in Object-Oriented Programming and app security. <br><br>
+        I also completed professional training programs at <b>DEPI</b> and <b>NTI</b>.
       </p>
     </div>
 
     <h2>Skills</h2>
     <div class="card">
-      <ul>
-        <li>Kotlin & Android Development</li>
-        <li>Jetpack Compose</li>
-        <li>Object-Oriented Programming (OOP)</li>
-        <li>Firebase Authentication & Firestore</li>
-        <li>Problem Solving</li>
-        <li>Networking & Cybersecurity Basics</li>
-        <li>REST APIs & Retrofit</li>
-        <li>UI/UX Design Principles</li>
-        <li>Git & GitHub Workflow</li>
-        <li>Unit Testing & Debugging</li>
-        <li>Publishing Apps to Play Store</li>
-      </ul>
+      <div class="skills-grid">
+        <div class="skill"><i class="fab fa-android"></i><span>Kotlin & Android</span></div>
+        <div class="skill"><i class="fas fa-mobile-alt"></i><span>Jetpack Compose</span></div>
+        <div class="skill"><i class="fas fa-cubes"></i><span>OOP</span></div>
+        <div class="skill"><i class="fas fa-fire"></i><span>Firebase</span></div>
+        <div class="skill"><i class="fas fa-code"></i><span>Problem Solving</span></div>
+        <div class="skill"><i class="fas fa-network-wired"></i><span>Networking & Security</span></div>
+        <div class="skill"><i class="fas fa-plug"></i><span>REST APIs & Retrofit</span></div>
+        <div class="skill"><i class="fas fa-paint-brush"></i><span>UI/UX Principles</span></div>
+        <div class="skill"><i class="fab fa-git-alt"></i><span>Git & GitHub</span></div>
+        <div class="skill"><i class="fas fa-vials"></i><span>Unit Testing</span></div>
+        <div class="skill"><i class="fab fa-google-play"></i><span>Publishing Apps</span></div>
+        <div class="skill"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="skill"><i class="fas fa-code"></i><span>C#</span></div>
+      </div>
     </div>
 
     <h2>Projects</h2>
