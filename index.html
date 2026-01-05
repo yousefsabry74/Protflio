@@ -1,305 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yousef Sabry | Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0;
-      background: linear-gradient(270deg, #0f0c29, #1a1a2e, #16213e, #0f3460);
-      background-size: 800% 800%;
-      animation: darkWave 20s ease infinite;
-      color: #f1f5f9;
-    }
-    @keyframes darkWave {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      top: 0;
-      left: 0;
-    }
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      color: white;
-    }
-    header img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 4px solid white;
-      box-shadow: 0 0 15px rgba(255,255,255,0.4);
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    header img:hover { transform: scale(1.05); }
-    header h1 {
-      font-size: 3em;
-      margin: 20px 0 10px;
-      font-weight: bold;
-    }
-    header p {
-      font-size: 1.2em;
-      font-style: italic;
-      color: #cbd5e1;
-    }
-    .btn {
-      display: inline-block;
-      background-color: #2563eb;
-      padding: 12px 25px;
-      border-radius: 30px;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1em;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.4);
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-    .socials { margin-top: 25px; }
-    .socials a {
-      margin: 0 15px;
-      font-size: 1.8em;
-      color: white;
-      transition: color 0.3s ease;
-    }
-    .socials a:hover { color: #facc15; }
-    section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h2 {
-      font-size: 2em;
-      color: white;
-      border-bottom: 2px solid #fff;
-      padding-bottom: 10px;
-      margin-bottom: 25px;
-    }
-    .card {
-      background-color: rgba(255,255,255,0.1);
-      border-radius: 15px;
-      padding: 30px 25px;
-      margin-bottom: 35px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s ease forwards;
-    }
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-    }
-    .skill {
-      background: #1e293b;
-      padding: 15px;
-      border-radius: 12px;
-      text-align: center;
-      transition: background 0.3s;
-      font-size: 1em;
-      font-weight: 600;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-    .skill i { font-size: 1.5em; }
-    .skill:hover { background: #334155; }
-    .project {
-      padding: 12px 0;
-      cursor: pointer;
-    }
-    .project-details {
-      font-size: 1.1em;
-      font-weight: 600;
-      color: #e2e8f0;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      font-weight: 600;
-      font-size: 1em;
-      margin-top: 60px;
-    }
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      margin: 10px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
-    }
-    .lightbox:target {
-      display: flex;
-    }
-    .close {
-      position: absolute;
-      top: 20px; right: 40px;
-      font-size: 2em;
-      color: white;
-      text-decoration: none;
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"/>
-</head>
-<body>
-  <div id="particles-js"></div>
-
-  <header>
-    <img src="image/profile.jpg" alt="Yousef Sabry Photo" />
-    <h1>Yousef Sabry</h1>
-    <p>Android Developer | OOP Enthusiast | Problem Solver</p>
-    <a class="btn" href="Yousef-Sabry-CV.pdf" target="_blank" rel="noopener noreferrer">📄 Download CV</a>
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/yousef-sabry-a64983338" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/yousefsabry74" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:yousefsabry824@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-  </header>
-
-  <section>
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        I am a Computer Science student at Mansoura University. <br>
-        I specialize in Android development using Kotlin and Jetpack Compose,
-        with a strong foundation in Object-Oriented Programming and app security. <br><br>
-        🎓 I trained at <strong>NTI</strong> and <strong>DEPI</strong>, gaining hands-on experience.
-      </p>
-    </div>
-
-    <h2>Skills</h2>
-
-    <!-- Application Development -->
-    <div class="card">
-      <h3>📱 Application Development</h3>
-      <div class="skills-grid">
-        <div class="skill"><i class="fab fa-android"></i><span>Kotlin & Android</span></div>
-        <div class="skill"><i class="fas fa-mobile-alt"></i><span>Jetpack Compose</span></div>
-        <div class="skill"><i class="fas fa-database"></i><span>Firebase</span></div>
-        <div class="skill"><i class="fas fa-plug"></i><span>REST APIs</span></div>
-        <div class="skill"><i class="fab fa-google-play"></i><span>Publishing Apps</span></div>
-        <div class="skill"><i class="fab fa-python"></i><span>Python</span></div>
-        <div class="skill"><i class="fas fa-code"></i><span>C#</span></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yousef Sabry | Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Fira+Code:wght@400;700&family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="container nav-content">
+        <a href="#" class="logo">Youssef Sabry</a>
+        <ul class="nav-links">
+          <li>
+            <a href="#about"><span class="num"></span> About</a>
+          </li>
+          <li>
+            <a href="#skills"><span class="num"></span> Skills</a>
+          </li>
+          <li>
+            <a href="#projects"><span class="num"></span> Work</a>
+          </li>
+          <li>
+            <a href="#reviews"><span class="num"></span> Reviews</a>
+          </li>
+          <li>
+            <a href="Yousef-Sabry-CV.pdf" class="btn-resume" download>Resume</a>
+          </li>
+        </ul>
+        <div class="menu-btn"><i class="fas fa-bars"></i></div>
       </div>
-    </div>
+    </nav>
 
-    <!-- Networking & Security -->
-    <div class="card">
-      <h3>🌐 Networking & Security</h3>
-      <div class="skills-grid">
-        <div class="skill"><i class="fas fa-network-wired"></i><span>Networking</span></div>
-        <div class="skill"><i class="fas fa-lock"></i><span>Cybersecurity Basics</span></div>
-        <div class="skill"><i class="fab fa-git-alt"></i><span>Git & GitHub</span></div>
-        <div class="skill"><i class="fas fa-vial"></i><span>Unit Testing</span></div>
-        <div class="skill"><i class="fas fa-cubes"></i><span>OOP Principles</span></div>
-      </div>
-    </div>
+    <header class="hero" id="about">
+      <div class="container hero-layout">
+        <div class="hero-text-area">
+          <p class="hi-text">Hi, my name is</p>
+          <h1 class="name-text">Yousef Sabry.</h1>
+          <h2 class="role-text">I build <span id="typed-text"></span></h2>
+          <p class="bio-text">
+            I am a software engineer specializing in building exceptional
+            digital experiences using
+            <strong>Full Stack Web (Node.js)</strong> and
+            <strong>Native Android (Kotlin)</strong> technologies. Currently
+            focused on building accessible, human-centered products.
+          </p>
 
-    <!-- Additional / Soft Skills -->
-    <div class="card">
-      <h3>💡 Additional / Soft Skills</h3>
-      <div class="skills-grid">
-        <div class="skill"><i class="fas fa-puzzle-piece"></i><span>Problem Solving</span></div>
-        <div class="skill"><i class="fas fa-users"></i><span>Teamwork</span></div>
-        <div class="skill"><i class="fas fa-comments"></i><span>Communication</span></div>
-        <div class="skill"><i class="fas fa-clock"></i><span>Time Management</span></div>
-        <div class="skill"><i class="fas fa-lightbulb"></i><span>Creativity</span></div>
-        <div class="skill"><i class="fas fa-handshake"></i><span>Adaptability</span></div>
-      </div>
-    </div>
+          <div class="cta-group">
+            <a
+              href="https://khamsat.com/user/yousefsabri"
+              target="_blank"
+              class="btn btn-primary"
+              >Khamsat</a
+            >
+            <a
+              href="https://mostaql.com/u/YousefSabry74"
+              target="_blank"
+              class="btn btn-outline"
+              >Mostaql</a
+            >
+          </div>
 
-    <h2>Training</h2>
-    <!-- Training Section -->
-    <div class="card">
-      <h3>🎓 Training Programs</h3>
-      <div class="skills-grid">
-        <div class="skill">
-          <i class="fas fa-laptop-code"></i>
-          <span><strong>Digital Egypt Pioneers Program (DEPI)</strong><br>
-          Android Application Development<br>
-          <small>June 2025 – Present</small></span>
+          <div class="hero-socials">
+            <a href="https://github.com/yousefsabry74" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/yousefsabry" target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="mailto:yousefsabry824@gmail.com"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </div>
         </div>
-        <div class="skill">
-          <i class="fas fa-network-wired"></i>
-          <span><strong>National Telecommunication Institute (NTI)</strong><br>
-          Network Infrastructure Training<br>
-          <small>June 2025 – July 2025</small></span>
+
+        <div class="hero-img-area">
+          <div class="img-wrapper">
+            <img src="image/profile.jpg" alt="Yousef Sabry" />
+          </div>
         </div>
       </div>
-    </div>
+    </header>
 
-    <h2>Projects</h2>
-    <div class="card">
-      <div class="project">
-        <a href="#loginApp"><div class="project-details">Login/Register App – Kotlin + Firebase</div></a>
+    <section id="skills" class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2>Skills & Expertise</h2>
+        </div>
+
+        <div class="glass-card" style="animation-delay: 0.2s">
+          <h3 class="skill-category-title">
+            <i class="fas fa-globe"></i> Full Stack Web Development
+          </h3>
+          <div class="skills-grid">
+            <div class="skill-box" data-tilt>
+              <i class="fab fa-node-js"></i><span>Node.js</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-server"></i><span>Express.js</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-database"></i><span>MongoDB</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-database"></i><span>MySQL</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fab fa-js"></i><span>JavaScript</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fab fa-html5"></i><span>HTML5</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fab fa-css3-alt"></i><span>CSS3</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fab fa-git-alt"></i><span>GitHub</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-cloud-upload-alt"></i><span>Deployment</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-globe"></i><span>Domain Linking</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card" style="animation-delay: 0.4s">
+          <h3 class="skill-category-title">
+            <i class="fab fa-android"></i> Android Development
+          </h3>
+          <div class="skills-grid">
+            <div class="skill-box" data-tilt>
+              <i class="fab fa-android"></i><span>Kotlin</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-mobile-alt"></i><span>Jetpack Compose</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-fire"></i><span>Firebase</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-exchange-alt"></i><span>REST APIs</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-shield-alt"></i><span>App Security</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fab fa-google-play"></i><span>Publishing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card" style="animation-delay: 0.6s">
+          <h3 class="skill-category-title">
+            <i class="fas fa-users"></i> Soft Skills
+          </h3>
+          <div class="skills-grid">
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-puzzle-piece"></i><span>Problem Solving</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-users"></i><span>Teamwork</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-comments"></i><span>Communication</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-clock"></i><span>Time Mgmt</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-lightbulb"></i><span>Creativity</span>
+            </div>
+            <div class="skill-box" data-tilt>
+              <i class="fas fa-handshake"></i><span>Adaptability</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="project">
-        <div class="project-details">Weather App – REST API + Retrofit + MVVM</div>
+    </section>
+    <section id="projects" class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured Projects</h2>
+        </div>
+        <div class="projects-grid">
+          <div
+            class="project-card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.3"
+          >
+            <div class="project-img-holder">
+              <img src="image/project1.jpg" alt="Anwar Al-Rajhi" />
+            </div>
+            <div class="project-content">
+              <h3>Anwar Al-Rajhi Platform</h3>
+              <p>
+                Full-stack web application with interactive UI and admin panel
+                for real-time content management.
+              </p>
+
+              <ul class="project-tech">
+                <li>Node.js</li>
+                <li>Firebase</li>
+                <li>Cloudinary</li>
+                <li>HTML5/CSS3</li>
+                <li>Vanilla JS</li>
+              </ul>
+
+              <div class="project-links-area">
+                <a
+                  href="https://anwaralrajeh.com/"
+                  target="_blank"
+                  class="project-btn"
+                  >View Project <i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="project-card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.3"
+          >
+            <div class="project-img-holder">
+              <img src="image/project2.jpg" alt="WesamFiles" />
+            </div>
+            <div class="project-content">
+              <h3>WesamFiles Platform</h3>
+              <p>
+                Secure file upload platform featuring a responsive admin
+                dashboard, Nginx configuration, and custom domain.
+              </p>
+
+              <ul class="project-tech">
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>Nginx</li>
+                <li>VPS Deployment</li>
+                <li>Security</li>
+              </ul>
+
+              <div class="project-links-area">
+                <a
+                  href="https://wesamfiles.cloud/"
+                  target="_blank"
+                  class="project-btn"
+                  >View Project <i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="project-card"
+            data-tilt
+            data-tilt-glare
+            data-tilt-max-glare="0.3"
+          >
+            <div class="project-img-holder">
+              <img src="image/project3.jpg" alt="Digital Library" />
+            </div>
+            <div class="project-content">
+              <h3>Digital Library System</h3>
+              <p>
+                Library management system managing borrowing operations using
+                Serverless Functions and Google Sheets API.
+              </p>
+
+              <ul class="project-tech">
+                <li>Serverless Functions</li>
+                <li>Google Sheets API</li>
+                <li>Authentication</li>
+                <li>AJAX</li>
+              </ul>
+
+              <div class="project-links-area">
+                <a href="#" target="_blank" class="project-btn"
+                  >View Project <i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="project">
-        <div class="project-details">Future Projects – Android Apps with enhanced security</div>
+    </section>
+
+    <section id="reviews" class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2>What Clients Say</h2>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p dir="rtl">
+              "تسلم ايدك يارجولة على الشغل الاحترافي والتواصل اليومي ربنا يكرمك
+              ويزيدك يامعلم"
+            </p>
+            <div class="client-info">
+              <h5>- Wesam M. <small>(khamsat)</small></h5>
+              <a
+                href="https://khamsat.com/user/yousefsabri/reviews/1102843"
+                target="_blank"
+                class="verify-link"
+                >Verify <i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p dir="rtl">
+              "يوسف انسان مبدع، يستاهل التعاون والعمل .. يستاهل كل خير"
+            </p>
+            <div class="client-info">
+              <h5>- Mohamed R. <small>(Khamsat)</small></h5>
+              <a
+                href="https://khamsat.com/user/yousefsabri/reviews/1100816"
+                target="_blank"
+                class="verify-link"
+                >Verify <i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p dir="rtl">"مبدع"</p>
+            <div class="client-info">
+              <h5>- Anwar A. <small>(khamsat)</small></h5>
+              <a
+                href="https://khamsat.com/user/yousefsabri/reviews/1104046"
+                target="_blank"
+                class="verify-link"
+                >Verify <i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p dir="rtl">"ما قصر معايا والله شغل جميل"</p>
+            <div class="client-info">
+              <h5>- Layan A. <small>(Mostaql)</small></h5>
+              <a
+                href="https://mostaql.com/u/YousefSabry74/reviews/9212085"
+                target="_blank"
+                class="verify-link"
+                >Verify <i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p dir="rtl">
+              "يعطيك العافية جهد مميز تشكر عليه وعمل احترافي وتعاون كبير منك الف
+              شكر"
+            </p>
+            <div class="client-info">
+              <h5>- Suleiman A. <small>(Khamsat)</small></h5>
+              <a
+                href="https://khamsat.com/user/yousefsabri/reviews/1097442"
+                target="_blank"
+                class="verify-link"
+                >Verify <i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p dir="rtl">
+              "تعاملت مع الاخ المحترم وكان قمة في الاخلاق والتواضع مشكور"
+            </p>
+            <div class="client-info">
+              <h5>- Abdullah A. <small>(Khamsat)</small></h5>
+              <a
+                href="https://khamsat.com/user/yousefsabri/reviews/1092816"
+                target="_blank"
+                class="verify-link"
+                >Verify <i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p dir="rtl">
+              "متعاون جدا ومهتم ومتابع حتى الإنجاز ويتقبل التعديلات بصدر رحب"
+            </p>
+            <div class="client-info">
+              <h5>- Masoud A. <small>(Khamsat)</small></h5>
+              <a
+                href="https://khamsat.com/user/yousefsabri/reviews/1092370"
+                target="_blank"
+                class="verify-link"
+                >Verify <i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p dir="rtl">
+              "عمل ممتاز جدا وشخص متعاون جدا جزاه الله خيرا اتمنى من الجميع
+              التعامل معه"
+            </p>
+            <div class="client-info">
+              <h5>- M. Lemine <small>(Khamsat)</small></h5>
+              <a
+                href="https://khamsat.com/user/yousefsabri/reviews/1091368"
+                target="_blank"
+                class="verify-link"
+                >Verify <i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p dir="rtl">
+              "شغل ممتاز وسريع ، سيتم اعتماده في اعمال قادمه باذن الله ، انصح
+              بالتعاون معه "
+            </p>
+            <div class="client-info">
+              <h5>- Arwa A. <small>(Khamsat)</small></h5>
+              <a
+                href="https://khamsat.com/user/yousefsabri/reviews/1090260"
+                target="_blank"
+                class="verify-link"
+                >Verify <i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    &copy; 2025 Yousef Sabry. All rights reserved.
-  </footer>
+    <footer>
+      <p>Designed & Built by Yousef Sabry</p>
+    </footer>
 
-  <!-- Lightbox for Project Images -->
-  <div id="loginApp" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="image/login1.jpg" alt="Login App Screenshot 1">
-    <img src="image/login2.jpg" alt="Login App Screenshot 2">
-  </div>
-
-  <!-- particles.js -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 120 },
-        "size": { "value": 3 },
-        "move": { "speed": 1 },
-        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff" },
-        "color": { "value": "#ffffff" }
-      },
-      "interactivity": {
-        "events": {
-          "onhover": { "enable": true, "mode": "repulse" }
-        }
-      }
-    });
-  </script>
-</body>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
-
-
-    
