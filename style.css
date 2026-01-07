@@ -631,3 +631,112 @@ footer {
     line-height: 1.6;
     /* مسافة بين السطور للقراءة المريحة */
 }
+
+.menu-btn {
+    display: block;
+    /* التعديلات الجديدة */
+    position: relative;
+    z-index: 1000;
+    /* رقم عالي عشان نضمن إنه يظهر فوق أي حاجة */
+}
+
+.project-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    /* حجم مناسب للضغط */
+    border: 1px solid var(--primary);
+    /* برواز سماوي */
+    color: var(--primary);
+    /* لون النص سماوي */
+    background: transparent;
+    /* خلفية شفافة */
+    border-radius: 4px;
+    /* حواف دائرية خفيفة */
+
+    font-family: var(--font-mono);
+    /* نفس نوع الخط المستخدم في الأزرار */
+    font-size: 0.9rem;
+    font-weight: normal;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    /* مسافة صغيرة تفصله عن العناصر فوقه */
+}
+
+.project-btn:hover {
+    background: rgba(100, 255, 218, 0.1);
+    /* خلفية مضيئة خفيفة عند الوقوف */
+    transform: translateY(-3px);
+    /* حركة بسيطة لأعلى */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* ظل خفيف للعمق */
+}
+
+/* Mobile Responsive */
+.menu-btn {
+    display: none;
+    /* الأساس: مخفي في شاشات الكمبيوتر */
+    color: var(--primary);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* تعديلات الشاشات المتوسطة */
+@media (max-width: 900px) {
+    .hero-layout {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text-area {
+        padding-top: 20px;
+        padding-right: 0;
+    }
+
+    .bio-text {
+        margin: 0 auto 30px;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
+
+    .hero-socials {
+        justify-content: center;
+    }
+
+    .section-head::after {
+        width: 100px;
+    }
+}
+
+/* تعديلات الموبايل فقط - هنا بنظهر الزرار */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+        /* يظهر فقط هنا */
+        position: relative;
+        z-index: 1000;
+        /* عشان يفضل ظاهر فوق القائمة */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 75%;
+        background: var(--bg-light);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        z-index: 99;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+}
