@@ -740,3 +740,18 @@ footer {
         right: 0;
     }
 }
+
+/* --- تعطيل أنيميشن الـ Tilt في المشاريع --- */
+
+.project-card {
+    /* إلغاء أي حركة 3D يتم إضافتها بواسطة الجافاسكريبت */
+    transform: none !important;
+
+    /* إلغاء خاصية will-change لتحسين الأداء طالما مفيش أنيميشن */
+    will-change: auto !important;
+}
+
+/* إخفاء عنصر اللمعة (Glare) الذي تضيفه المكتبة أوتوماتيكياً */
+.js-tilt-glare {
+    display: none !important;
+}
