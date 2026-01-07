@@ -1,4 +1,3 @@
-// 1. Typing Effect
 var typed = new Typed("#typed-text", {
   strings: [
     "Android Apps",
@@ -12,7 +11,6 @@ var typed = new Typed("#typed-text", {
   loop: true,
 });
 
-// 2. Navbar Scrolling Effect
 const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
@@ -24,14 +22,24 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// 3. Mobile Menu
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
+const menuIcon = menuBtn.querySelector("i");
+
 menuBtn.addEventListener("click", () => {
   navLinks.classList.toggle("active");
+  menuIcon.classList.toggle("fa-bars");
+  menuIcon.classList.toggle("fa-times");
 });
 
-// 4. Scroll Reveal Animation
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuIcon.classList.add("fa-bars");
+    menuIcon.classList.remove("fa-times");
+  });
+});
+
 const reveals = document.querySelectorAll(".reveal");
 function revealOnScroll() {
   for (let i = 0; i < reveals.length; i++) {
@@ -45,7 +53,6 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 
-// 5. Initialize Tilt for all elements with data-tilt
 VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
   max: 15,
   speed: 400,
