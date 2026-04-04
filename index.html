@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Yousef Sabry — Backend Developer & Freelance Coach specializing in Node.js, building secure scalable APIs and mentoring developers." />
     <title>Yousef Sabry | Portfolio</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Fira+Code:wght@400;700&family=Poppins:wght@400;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;900&family=Fira+Code:wght@400;700&family=Poppins:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -15,67 +16,77 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loader">
+      <div class="loader-content">
+        <div class="loader-logo">YS</div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+        <p class="loader-text" data-en="Loading..." data-ar="جاري التحميل...">Loading...</p>
+      </div>
+    </div>
+
+    <!-- ===== SCROLL PROGRESS ===== -->
+    <div id="scroll-progress"></div>
+
+    <!-- ===== CUSTOM CURSOR ===== -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <!-- ===== PARTICLES CANVAS ===== -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ===== NAVBAR ===== -->
     <nav id="navbar">
       <div class="container nav-content">
         <a href="#" class="logo">Yousef Sabry</a>
         <ul class="nav-links">
+          <li><a href="#about"    data-en="About"    data-ar="عني">About</a></li>
+          <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+          <li><a href="#skills"   data-en="Skills"   data-ar="المهارات">Skills</a></li>
+          <li><a href="#projects" data-en="Work"     data-ar="أعمالي">Work</a></li>
+          <li><a href="#reviews"  data-en="Reviews"  data-ar="آراء العملاء">Reviews</a></li>
+          <li><a href="#contact"  data-en="Contact"  data-ar="تواصل">Contact</a></li>
           <li>
-            <a href="#about"><span class="num"></span> About</a>
-          </li>
-          <li>
-            <a href="#skills"><span class="num"></span> Skills</a>
-          </li>
-          <li>
-            <a href="#projects"><span class="num"></span> Work</a>
-          </li>
-          <li>
-            <a href="#reviews"><span class="num"></span> Reviews</a>
-          </li>
-          <li>
-            <a href="Youssef Sabry cv.pdf" class="btn-resume" download
-              >Resume</a
-            >
+            <a href="Youssef Sabry cv.pdf" class="btn-resume" download data-en="Resume" data-ar="السيرة الذاتية">Resume</a>
           </li>
         </ul>
-        <div class="menu-btn"><i class="fas fa-bars"></i></div>
+        <div class="nav-actions">
+          <!-- Language Toggle -->
+          <button id="lang-toggle" class="icon-btn" title="Switch Language">
+            <span class="lang-label">AR</span>
+          </button>
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="menu-btn"><i class="fas fa-bars"></i></div>
+        </div>
       </div>
     </nav>
 
+    <!-- ===== HERO ===== -->
     <header class="hero" id="about">
       <div class="container hero-layout">
         <div class="hero-text-area">
-          <p class="hi-text">Hi, my name is</p>
+          <p class="hi-text" data-en="Hi, my name is" data-ar="مرحباً، اسمي">Hi, my name is</p>
           <h1 class="name-text">Yousef Sabry.</h1>
-          <h2 class="role-text">I build <span id="typed-text"></span></h2>
-         <p class="bio-text">
-  Build secure, scalable <strong>full-stack</strong> web and Android applications.
-  Develop end-to-end solutions using <strong>Node.js</strong> and <strong>Kotlin</strong>.
-  Stand out through hands-on experience in <strong>10+ real-world projects</strong>.
-</p>
-
-
+          <h2 class="role-text">
+            <span data-en="I build " data-ar="أبني ">I build </span>
+            <span id="typed-text"></span>
+          </h2>
+          <p class="bio-text"
+            data-en="<strong>Backend Developer</strong> specializing in <strong>Node.js</strong> — building secure, scalable APIs and server-side solutions. Alongside development, I work as a <strong>Freelance Instructor</strong> across multiple tech fields, helping learners grow through structured, hands-on learning."
+            data-ar="<strong>مطور باك إند</strong> متخصص في <strong>Node.js</strong> — أبني واجهات برمجية آمنة وقابلة للتوسع. بجانب التطوير، أعمل <strong>مدرباً حراً</strong> في مجالات تقنية متعددة، أساعد المتعلمين على النمو من خلال تعلم عملي ومنظم.">
+            <strong>Backend Developer</strong> specializing in <strong>Node.js</strong> — building secure, scalable APIs and server-side solutions. Alongside development, I work as a <strong>Freelance Instructor</strong> across multiple tech fields, helping learners grow through structured, hands-on learning.
+          </p>
           <div class="cta-group">
-            <a
-              href="https://khamsat.com/user/yousefsabri"
-              target="_blank"
-              class="btn btn-primary"
-              >Khamsat</a
-            >
-            <a
-              href="https://mostaql.com/u/YousefSabry74"
-              target="_blank"
-              class="btn btn-outline"
-              >Mostaql</a
-            >
+            <a href="https://khamsat.com/user/yousefsabri" target="_blank" class="btn btn-primary" data-en="Khamsat" data-ar="خمسات">Khamsat</a>
+            <a href="https://mostaql.com/u/YousefSabry74"  target="_blank" class="btn btn-outline" data-en="Mostaql"  data-ar="مستقل">Mostaql</a>
           </div>
-
           <div class="hero-socials">
-            <a href="https://github.com/yousefsabry74" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="https://www.linkedin.com/in/youssefsabry" target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
+            <a href="https://github.com/yousefsabry74"          target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/youssefsabry"  target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
 
@@ -83,388 +94,374 @@
           <div class="img-wrapper">
             <img src="image/profile.jpg" alt="Yousef Sabry" />
           </div>
+          <!-- floating badges -->
+          <div class="badge badge-1"><i class="fab fa-node-js"></i> Node.js</div>
+          <div class="badge badge-2"><i class="fas fa-chalkboard-teacher"></i> <span data-en="Coach" data-ar="مدرب">Coach</span></div>
+          <div class="badge badge-3"><i class="fas fa-star"></i> 5.0</div>
         </div>
+      </div>
+
+      <div class="hero-scroll-hint">
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+        <p data-en="Scroll to explore" data-ar="مرر للأسفل">Scroll to explore</p>
       </div>
     </header>
 
+
+
+    <!-- ===== PACKAGES ===== -->
+    <section id="services" class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-en="Packages" data-ar="الباقات">Packages</h2>
+        </div>
+        <p class="section-sub" data-en="Choose the plan that fits your goals. All packages include direct communication and fast delivery." data-ar="اختر الباقة التي تناسب أهدافك. جميع الباقات تشمل تواصلاً مباشراً وتسليماً سريعاً.">Choose the plan that fits your goals. All packages include direct communication and fast delivery.</p>
+        <div class="packages-grid">
+
+          <!-- STARTER -->
+          <div class="package-card glass-card">
+            <div class="pkg-header">
+              <span class="pkg-badge" data-en="Starter" data-ar="المبتدئ">Starter</span>
+              <div class="pkg-icon"><i class="fas fa-rocket"></i></div>
+              <div class="pkg-price" data-en="Contact <span>for price</span>" data-ar="تواصل <span>للسعر</span>">Contact <span>for price</span></div>
+            </div>
+            <ul class="pkg-features">
+              <li><i class="fas fa-check"></i><span data-en="Simple REST API (CRUD)" data-ar="API بسيطة (CRUD)">Simple REST API (CRUD)</span></li>
+              <li><i class="fas fa-check"></i><span data-en="User Authentication (JWT)" data-ar="مصادقة المستخدم (JWT)">User Authentication (JWT)</span></li>
+              <li><i class="fas fa-check"></i><span data-en="MongoDB or MySQL Database" data-ar="قاعدة بيانات MongoDB أو MySQL">MongoDB or MySQL Database</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Basic Error Handling" data-ar="معالجة الأخطاء الأساسية">Basic Error Handling</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Postman Collection Included" data-ar="توثيق Postman مرفق">Postman Collection Included</span></li>
+              <li class="faded"><i class="fas fa-times"></i><span data-en="Deployment on VPS" data-ar="نشر على VPS">Deployment on VPS</span></li>
+              <li class="faded"><i class="fas fa-times"></i><span data-en="Admin Dashboard" data-ar="لوحة تحكم">Admin Dashboard</span></li>
+              <li class="faded"><i class="fas fa-times"></i><span data-en="Advanced Security" data-ar="أمان متقدم">Advanced Security</span></li>
+            </ul>
+    
+          </div>
+
+          <!-- PROFESSIONAL (FEATURED) -->
+          <div class="package-card glass-card featured">
+            <div class="pkg-popular" data-en="Most Popular ⭐" data-ar="الأكثر طلباً ⭐">Most Popular ⭐</div>
+            <div class="pkg-header">
+              <span class="pkg-badge" data-en="Professional" data-ar="الاحترافي">Professional</span>
+              <div class="pkg-icon"><i class="fas fa-layer-group"></i></div>
+              <div class="pkg-price" data-en="Contact <span>for price</span>" data-ar="تواصل <span>للسعر</span>">Contact <span>for price</span></div>
+            </div>
+            <ul class="pkg-features">
+              <li><i class="fas fa-check"></i><span data-en="Full Backend System" data-ar="نظام باك إند كامل">Full Backend System</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Role-Based Access Control" data-ar="صلاحيات متعددة للمستخدمين">Role-Based Access Control</span></li>
+              <li><i class="fas fa-check"></i><span data-en="File Uploads (Cloudinary / Local)" data-ar="رفع الملفات (Cloudinary / محلي)">File Uploads (Cloudinary / Local)</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Advanced Security &amp; Validation" data-ar="أمان وتحقق متقدم">Advanced Security &amp; Validation</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Deployment on VPS + Nginx" data-ar="نشر على VPS + Nginx">Deployment on VPS + Nginx</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Custom Domain + SSL" data-ar="دومين مخصص + SSL">Custom Domain + SSL</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Postman Docs Included" data-ar="توثيق Postman مرفق">Postman Docs Included</span></li>
+            </ul>
+            
+          </div>
+
+          <!-- PREMIUM -->
+          <div class="package-card glass-card">
+            <div class="pkg-header">
+              <span class="pkg-badge" data-en="Premium" data-ar="المتميز">Premium</span>
+              <div class="pkg-icon"><i class="fas fa-crown"></i></div>
+              <div class="pkg-price" data-en="Contact <span>for price</span>" data-ar="تواصل <span>للسعر</span>">Contact <span>for price</span></div>
+            </div>
+            <ul class="pkg-features">
+              <li><i class="fas fa-check"></i><span data-en="Everything in Professional" data-ar="كل ما في الاحترافي">Everything in Professional</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Admin Dashboard (Full)" data-ar="لوحة تحكم كاملة">Admin Dashboard (Full)</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Payment Integration" data-ar="تكامل الدفع الإلكتروني">Payment Integration</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Email Notifications System" data-ar="نظام إشعارات البريد">Email Notifications System</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Real-Time Features (Socket.io)" data-ar="ميزات في الوقت الفعلي (Socket.io)">Real-Time Features (Socket.io)</span></li>
+              <li><i class="fas fa-check"></i><span data-en="30-Day Post-Launch Support" data-ar="دعم 30 يوماً بعد التسليم">30-Day Post-Launch Support</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Priority Delivery" data-ar="تسليم بالأولوية">Priority Delivery</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Full Source Code &amp; Documentation" data-ar="كود كامل وتوثيق شامل">Full Source Code &amp; Documentation</span></li>
+            </ul>
+            
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
     <section id="skills" class="reveal">
       <div class="container">
         <div class="section-head">
-          <h2>Skills & Expertise</h2>
+          <h2 data-en="Skills &amp; Expertise" data-ar="المهارات والخبرات">Skills &amp; Expertise</h2>
         </div>
 
         <div class="glass-card" style="animation-delay: 0.2s">
           <h3 class="skill-category-title">
-            <i class="fas fa-globe"></i> Full Stack Web Development
+            <i class="fas fa-globe"></i>
+            <span data-en="Full Stack Web Development" data-ar="تطوير الويب الشامل">Full Stack Web Development</span>
           </h3>
           <div class="skills-grid">
-            <div class="skill-box" data-tilt>
-              <i class="fab fa-node-js"></i><span>Node.js</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fas fa-server"></i><span>Express.js</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fas fa-database"></i><span>MongoDB</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fas fa-database"></i><span>MySQL</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fab fa-js"></i><span>JavaScript</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fab fa-html5"></i><span>HTML5</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fab fa-css3-alt"></i><span>CSS3</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fab fa-git-alt"></i><span>GitHub</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fas fa-cloud-upload-alt"></i><span>Deployment</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fas fa-globe"></i><span>Domain Linking</span>
-            </div>
+            <div class="skill-box" data-tilt><i class="fab fa-node-js"></i><span>Node.js</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-server"></i><span>Express.js</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-database"></i><span>MongoDB</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-database"></i><span>MySQL</span></div>
+            <div class="skill-box" data-tilt><i class="fab fa-js"></i><span>JavaScript</span></div>
+            <div class="skill-box" data-tilt><i class="fab fa-html5"></i><span>HTML5</span></div>
+            <div class="skill-box" data-tilt><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+            <div class="skill-box" data-tilt><i class="fab fa-git-alt"></i><span>GitHub</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-cloud-upload-alt"></i><span data-en="Deployment" data-ar="النشر">Deployment</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-lock"></i><span>JWT / Auth</span></div>
           </div>
         </div>
 
         <div class="glass-card" style="animation-delay: 0.4s">
           <h3 class="skill-category-title">
-            <i class="fab fa-android"></i> Android Development
+            <i class="fas fa-handshake"></i>
+            <span data-en="Freelance Coaching" data-ar="كوتشينج الفريلانس">Freelance Coaching</span>
           </h3>
           <div class="skills-grid">
-            <div class="skill-box" data-tilt>
-              <i class="fab fa-android"></i><span>Kotlin</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fas fa-mobile-alt"></i><span>Jetpack Compose</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fas fa-fire"></i><span>Firebase</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fas fa-exchange-alt"></i><span>REST APIs</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fas fa-shield-alt"></i><span>App Security</span>
-            </div>
-            <div class="skill-box" data-tilt>
-              <i class="fab fa-google-play"></i><span>Publishing</span>
-            </div>
+            <div class="skill-box" data-tilt><i class="fas fa-store"></i><span data-en="Freelance Platforms" data-ar="منصات الفريلانس">Freelance Platforms</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-user-tie"></i><span data-en="Getting First Client" data-ar="الحصول على أول عميل">Getting First Client</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-id-card"></i><span data-en="Profile Optimization" data-ar="تحسين الملف الشخصي">Profile Optimization</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-file-alt"></i><span data-en="Winning Proposals" data-ar="كتابة عروض مقنعة">Winning Proposals</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-comments"></i><span data-en="Client Communication" data-ar="التواصل مع العملاء">Client Communication</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-chart-line"></i><span data-en="Pricing &amp; Growth" data-ar="التسعير والنمو">Pricing &amp; Growth</span></div>
           </div>
         </div>
       </div>
     </section>
+
+
+
+    <!-- ===== PROJECTS ===== -->
     <section id="projects" class="reveal">
       <div class="container">
         <div class="section-head">
-          <h2>Featured Projects</h2>
+          <h2 data-en="Featured Projects" data-ar="أبرز المشاريع">Featured Projects</h2>
         </div>
         <div class="projects-grid">
-          <div
-            class="project-card"
-            data-tilt
-            data-tilt-glare
-            data-tilt-max-glare="0.3"
-          >
+
+          <div class="project-card glass-card">
             <div class="project-img-holder">
               <img src="image/project1.jpg" alt="Anwar Al-Rajhi" />
+              <div class="project-overlay">
+                <a href="https://ysabri742-art.github.io/anwer/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i></a>
+              </div>
             </div>
             <div class="project-content">
-              <h3>Anwar Al-Rajhi Platform</h3>
-              <p>
-                Full-stack web application with interactive UI and admin panel
-                for real-time content management.
-              </p>
-
+              <h3 data-en="Anwar Al-Rajhi Platform" data-ar="منصة أنوار الراجحي">Anwar Al-Rajhi Platform</h3>
+              <p data-en="Full-stack web application with interactive UI and admin panel for real-time content management." data-ar="تطبيق ويب متكامل بواجهة تفاعلية ولوحة تحكم للإدارة الفورية للمحتوى.">Full-stack web application with interactive UI and admin panel for real-time content management.</p>
               <ul class="project-tech">
-                <li>Node.js</li>
-                <li>Firebase</li>
-                <li>Cloudinary</li>
-                <li>HTML5/CSS3</li>
-                <li>Vanilla JS</li>
+                <li>Node.js</li><li>Firebase</li><li>Cloudinary</li><li>HTML5/CSS3</li><li>Vanilla JS</li>
               </ul>
-
               <div class="project-links-area">
-                <a
-                  href="https://ysabri742-art.github.io/anwer/"
-                  target="_blank"
-                  class="project-btn"
-                  >View Project <i class="fas fa-external-link-alt"></i
-                ></a>
+                <a href="https://ysabri742-art.github.io/anwer/" target="_blank" class="project-btn"><span data-en="View Project" data-ar="عرض المشروع">View Project</span> <i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
 
-          <div
-            class="project-card"
-            data-tilt
-            data-tilt-glare
-            data-tilt-max-glare="0.3"
-          >
+          <div class="project-card glass-card">
             <div class="project-img-holder">
               <img src="image/project2.jpg" alt="WesamFiles" />
+              <div class="project-overlay">
+                <a href="https://wesamfiles.cloud/" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i></a>
+              </div>
             </div>
             <div class="project-content">
-              <h3>WesamFiles Platform</h3>
-              <p>
-                Secure file upload platform featuring a responsive admin
-                dashboard, Nginx configuration, and custom domain.
-              </p>
-
+              <h3 data-en="WesamFiles Platform" data-ar="منصة وسام فايلز">WesamFiles Platform</h3>
+              <p data-en="Secure file upload platform featuring a responsive admin dashboard, Nginx configuration, and custom domain." data-ar="منصة رفع ملفات آمنة تتضمن لوحة تحكم متجاوبة وإعداد Nginx ودومين مخصص.">Secure file upload platform featuring a responsive admin dashboard, Nginx configuration, and custom domain.</p>
               <ul class="project-tech">
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>Nginx</li>
-                <li>VPS Deployment</li>
-                <li>Security</li>
+                <li>Node.js</li><li>Express.js</li><li>Nginx</li><li>VPS</li><li>Security</li>
               </ul>
-
               <div class="project-links-area">
-                <a
-                  href="https://wesamfiles.cloud/"
-                  target="_blank"
-                  class="project-btn"
-                  >View Project <i class="fas fa-external-link-alt"></i
-                ></a>
+                <a href="https://wesamfiles.cloud/" target="_blank" class="project-btn"><span data-en="View Project" data-ar="عرض المشروع">View Project</span> <i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
 
-          <div
-            class="project-card"
-            data-tilt
-            data-tilt-glare
-            data-tilt-max-glare="0.3"
-          >
+          <div class="project-card glass-card">
             <div class="project-img-holder">
               <img src="image/project3.jpg" alt="Digital Library" />
+              <div class="project-overlay">
+                <div class="overlay-btn disabled"><i class="fas fa-lock"></i></div>
+              </div>
             </div>
             <div class="project-content">
-              <h3>Digital Library System</h3>
-              <p>
-                Library management system managing borrowing operations using
-                Serverless Functions and Google Sheets API.
-              </p>
-
+              <h3 data-en="Digital Library System" data-ar="نظام المكتبة الرقمية">Digital Library System</h3>
+              <p data-en="Library management system managing borrowing operations using Serverless Functions and Google Sheets API." data-ar="نظام إدارة مكتبة يدير عمليات الاستعارة باستخدام دوال Serverless وGoogle Sheets API.">Library management system managing borrowing operations using Serverless Functions and Google Sheets API.</p>
               <ul class="project-tech">
-                <li>Serverless Functions</li>
-                <li>Google Sheets API</li>
-                <li>Authentication</li>
-                <li>AJAX</li>
+                <li>Serverless</li><li>Google Sheets API</li><li>Auth</li><li>AJAX</li>
               </ul>
-
               <div class="project-links-area">
-                
+                <span class="project-btn disabled" data-en="Private Project" data-ar="مشروع خاص">Private Project</span>
               </div>
             </div>
           </div>
+
+          <!-- SLOT FOR NEXT PROJECT -->
+          <div class="project-card glass-card project-coming-soon">
+            <div class="coming-soon-content">
+              <div class="cs-icon"><i class="fas fa-code"></i></div>
+              <h3 data-en="Coming Soon" data-ar="قريباً">Coming Soon</h3>
+              <p data-en="A new exciting project is on the way. Stay tuned!" data-ar="مشروع جديد ومثير في الطريق. ترقبوا!">A new exciting project is on the way. Stay tuned!</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
+    <!-- ===== REVIEWS ===== -->
     <section id="reviews" class="reveal">
       <div class="container">
         <div class="section-head">
-          <h2>What Clients Say</h2>
+          <h2 data-en="What Clients Say" data-ar="ماذا يقول العملاء">What Clients Say</h2>
         </div>
-
         <div class="reviews-grid">
-          <div class="review-card">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
-            </div>
-            <p dir="rtl">
-              "تسلم ايدك يارجولة على الشغل الاحترافي والتواصل اليومي ربنا يكرمك
-              ويزيدك يامعلم"
-            </p>
+
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«تسلم ايدك يارجولة على الشغل الاحترافي والتواصل اليومي ربنا يكرمك ويزيدك يامعلم»</p>
             <div class="client-info">
               <h5>- Wesam M. <small>(khamsat)</small></h5>
-              <a
-                href="https://khamsat.com/user/yousefsabri/reviews/1102843"
-                target="_blank"
-                class="verify-link"
-                >Verify <i class="fas fa-external-link-alt"></i
-              ></a>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1102843" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
             </div>
           </div>
 
-          <div class="review-card">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
-            </div>
-            <p dir="rtl">
-              "يوسف انسان مبدع، يستاهل التعاون والعمل .. يستاهل كل خير"
-            </p>
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«يوسف انسان مبدع، يستاهل التعاون والعمل .. يستاهل كل خير»</p>
             <div class="client-info">
               <h5>- Mohamed R. <small>(Khamsat)</small></h5>
-              <a
-                href="https://khamsat.com/user/yousefsabri/reviews/1100816"
-                target="_blank"
-                class="verify-link"
-                >Verify <i class="fas fa-external-link-alt"></i
-              ></a>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1100816" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
             </div>
           </div>
 
-          <div class="review-card">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
-            </div>
-            <p dir="rtl">"مبدع"</p>
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«مبدع»</p>
             <div class="client-info">
               <h5>- Anwar A. <small>(khamsat)</small></h5>
-              <a
-                href="https://khamsat.com/user/yousefsabri/reviews/1104046"
-                target="_blank"
-                class="verify-link"
-                >Verify <i class="fas fa-external-link-alt"></i
-              ></a>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1104046" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
             </div>
           </div>
 
-          <div class="review-card">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
-            </div>
-            <p dir="rtl">"ما قصر معايا والله شغل جميل"</p>
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«ما قصر معايا والله شغل جميل»</p>
             <div class="client-info">
               <h5>- Layan A. <small>(Mostaql)</small></h5>
-              <a
-                href="https://mostaql.com/u/YousefSabry74/reviews/9212085"
-                target="_blank"
-                class="verify-link"
-                >Verify <i class="fas fa-external-link-alt"></i
-              ></a>
+              <a href="https://mostaql.com/u/YousefSabry74/reviews/9212085" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
             </div>
           </div>
 
-          <div class="review-card">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
-            </div>
-            <p dir="rtl">
-              "يعطيك العافية جهد مميز تشكر عليه وعمل احترافي وتعاون كبير منك الف
-              شكر"
-            </p>
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«يعطيك العافية جهد مميز تشكر عليه وعمل احترافي وتعاون كبير منك الف شكر»</p>
             <div class="client-info">
               <h5>- Suleiman A. <small>(Khamsat)</small></h5>
-              <a
-                href="https://khamsat.com/user/yousefsabri/reviews/1097442"
-                target="_blank"
-                class="verify-link"
-                >Verify <i class="fas fa-external-link-alt"></i
-              ></a>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1097442" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
             </div>
           </div>
 
-          <div class="review-card">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
-            </div>
-            <p dir="rtl">
-              "تعاملت مع الاخ المحترم وكان قمة في الاخلاق والتواضع مشكور"
-            </p>
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«تعاملت مع الاخ المحترم وكان قمة في الاخلاق والتواضع مشكور»</p>
             <div class="client-info">
               <h5>- Abdullah A. <small>(Khamsat)</small></h5>
-              <a
-                href="https://khamsat.com/user/yousefsabri/reviews/1092816"
-                target="_blank"
-                class="verify-link"
-                >Verify <i class="fas fa-external-link-alt"></i
-              ></a>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1092816" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
             </div>
           </div>
 
-          <div class="review-card">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
-            </div>
-            <p dir="rtl">
-              "متعاون جدا ومهتم ومتابع حتى الإنجاز ويتقبل التعديلات بصدر رحب"
-            </p>
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«متعاون جدا ومهتم ومتابع حتى الإنجاز ويتقبل التعديلات بصدر رحب»</p>
             <div class="client-info">
               <h5>- Masoud A. <small>(Khamsat)</small></h5>
-              <a
-                href="https://khamsat.com/user/yousefsabri/reviews/1092370"
-                target="_blank"
-                class="verify-link"
-                >Verify <i class="fas fa-external-link-alt"></i
-              ></a>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1092370" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
             </div>
           </div>
 
-          <div class="review-card">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
-            </div>
-            <p dir="rtl">
-              "عمل ممتاز جدا وشخص متعاون جدا جزاه الله خيرا اتمنى من الجميع
-              التعامل معه"
-            </p>
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«عمل ممتاز جدا وشخص متعاون جدا جزاه الله خيرا اتمنى من الجميع التعامل معه»</p>
             <div class="client-info">
               <h5>- M. Lemine <small>(Khamsat)</small></h5>
-              <a
-                href="https://khamsat.com/user/yousefsabri/reviews/1091368"
-                target="_blank"
-                class="verify-link"
-                >Verify <i class="fas fa-external-link-alt"></i
-              ></a>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1091368" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
             </div>
           </div>
 
-          <div class="review-card">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
-            </div>
-            <p dir="rtl">
-              "شغل ممتاز وسريع ، سيتم اعتماده في اعمال قادمه باذن الله ، انصح
-              بالتعاون معه "
-            </p>
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«شغل ممتاز وسريع، سيتم اعتماده في اعمال قادمه باذن الله، انصح بالتعاون معه»</p>
             <div class="client-info">
-              <h5>- Arwa A. <small>(mostaql)</small></h5>
-              <a
-                href="https://khamsat.com/user/yousefsabri/reviews/1090260"
-                target="_blank"
-                class="verify-link"
-                >Verify <i class="fas fa-external-link-alt"></i
-              ></a>
+              <h5>- Arwa A. <small>(Mostaql)</small></h5>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1090260" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
             </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
+        </div>
+        <div class="contact-wrapper glass-card">
+          <div class="contact-text">
+            <h3 data-en="Let's work together!" data-ar="لنعمل معاً!">Let's work together!</h3>
+            <p data-en="Whether you have a project in mind, need coaching, or just want to say hi — my inbox is always open. I'll get back to you as soon as possible!" data-ar="سواء كان لديك مشروع في ذهنك، أو تحتاج تدريباً، أو تريد فقط التواصل — أنا دائماً متاح. سأرد عليك في أقرب وقت!">Whether you have a project in mind, need coaching, or just want to say hi — my inbox is always open. I'll get back to you as soon as possible!</p>
+            <div class="contact-channels">
+              
+               
+              </a>
+              <a href="https://khamsat.com/user/yousefsabri" target="_blank" class="contact-channel khamsat">
+                <i class="fas fa-store"></i>
+                <div>
+                  <strong>Khamsat</strong>
+                  <span data-en="Order a service" data-ar="اطلب خدمة">Order a service</span>
+                </div>
+              </a>
+              <a href="https://mostaql.com/u/YousefSabry74" target="_blank" class="contact-channel mostaql">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <strong>Mostaql</strong>
+                  <span data-en="Post a project" data-ar="انشر مشروعك">Post a project</span>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/youssefsabry" target="_blank" class="contact-channel linkedin">
+                <i class="fab fa-linkedin"></i>
+                <div>
+                  <strong>LinkedIn</strong>
+                  <span data-en="Connect with me" data-ar="تواصل على لينكدإن">Connect with me</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="contact-cta">
+            
+            <a href="Youssef Sabry cv.pdf" download class="cv-btn">
+              <i class="fas fa-file-download"></i>
+              <span data-en="Download CV" data-ar="تحميل السيرة الذاتية">Download CV</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ===== FOOTER ===== -->
     <footer>
-      <p>Designed & Built by Yousef Sabry</p>
+      <div class="footer-socials">
+        <a href="https://github.com/yousefsabry74"         target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/youssefsabry" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://khamsat.com/user/yousefsabri"     target="_blank" title="Khamsat"><i class="fas fa-store"></i></a>
+      </div>
+      <p data-en="Designed &amp; Built by Yousef Sabry" data-ar="تصميم وتطوير يوسف صبري">Designed &amp; Built by Yousef Sabry</p>
+      <p class="footer-year">© 2025 — All Rights Reserved</p>
     </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
-
-
-
