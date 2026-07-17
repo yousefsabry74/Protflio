@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en" data-lang="en">
   <head>
@@ -465,3 +466,481 @@
     <script src="script.js"></script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="ar" data-lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="يوسف صبري — مطور باك إند ومدرب Soft Skills وفريلانس، أبني APIs آمنة وأساعد الطلاب على دخول سوق العمل الحر." />
+    <title>يوسف صبري | Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;900&family=Fira+Code:wght@400;700&family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body dir="rtl">
+
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loader">
+      <div class="loader-content">
+        <div class="loader-logo">YS</div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+        <p class="loader-text" data-en="Loading..." data-ar="جاري التحميل...">جاري التحميل...</p>
+      </div>
+    </div>
+
+    <!-- ===== SCROLL PROGRESS ===== -->
+    <div id="scroll-progress"></div>
+
+    <!-- ===== CUSTOM CURSOR ===== -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <!-- ===== PARTICLES CANVAS ===== -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar">
+      <div class="container nav-content">
+        <a href="#" class="logo">Yousef Sabry</a>
+        <ul class="nav-links">
+          <li><a href="#about"    data-en="About"    data-ar="عني">About</a></li>
+          <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+          <li><a href="#skills"   data-en="Skills"   data-ar="المهارات">Skills</a></li>
+          <li><a href="#projects" data-en="Work"     data-ar="أعمالي">Work</a></li>
+          <li><a href="#reviews"  data-en="Reviews"  data-ar="آراء العملاء">Reviews</a></li>
+          <li><a href="#contact"  data-en="Contact"  data-ar="تواصل">Contact</a></li>
+          <li>
+            <a href="Yousef_Sabry_CV_Updated.docx" class="btn-resume" download data-en="Resume" data-ar="السيرة الذاتية">Resume</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <!-- Language Toggle -->
+          <button id="lang-toggle" class="icon-btn" title="Switch Language">
+            <span class="lang-label">EN</span>
+          </button>
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="menu-btn"><i class="fas fa-bars"></i></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero" id="about">
+      <div class="container hero-layout">
+        <div class="hero-text-area">
+          <p class="hi-text" data-en="Hi, my name is" data-ar="أهلاً، أنا">Hi, my name is</p>
+          <h1 class="name-text">Yousef Sabry.</h1>
+          <h2 class="role-text">
+            <span data-en="I build " data-ar="أبني ">I build </span>
+            <span id="typed-text"></span>
+          </h2>
+          <p class="bio-text"
+            data-en="<strong>Backend Developer</strong> focused on <strong>Node.js</strong>, secure APIs, database design, authentication, authorization, and AI-powered backend features. I also work as a <strong>Soft Skills &amp; Freelance Trainer</strong>, helping students build strong profiles, win clients, and turn training into real freelance income."
+            data-ar="<strong>مطور باك إند</strong> متخصص في <strong>Node.js</strong> وبناء APIs آمنة وقابلة للتوسع، مع خبرة في قواعد البيانات، المصادقة، الصلاحيات، وتأمين التطبيقات. بجانب التطوير، أعمل <strong>مدرب Soft Skills &amp; Freelance</strong> وأساعد الطلاب على بناء حضور مهني قوي، جذب العملاء، وتحقيق دخل فعلي من العمل الحر.">
+            <strong>Backend Developer</strong> focused on <strong>Node.js</strong>, secure APIs, database design, authentication, authorization, and AI-powered backend features. I also work as a <strong>Soft Skills &amp; Freelance Trainer</strong>, helping students build strong profiles, win clients, and turn training into real freelance income.
+          </p>
+          <div class="cta-group">
+            <a href="https://khamsat.com/user/yousefsabri" target="_blank" class="btn btn-primary" data-en="Khamsat" data-ar="خمسات">Khamsat</a>
+            <a href="https://mostaql.com/u/YousefSabry74"  target="_blank" class="btn btn-outline" data-en="Mostaql"  data-ar="مستقل">Mostaql</a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/yousefsabry74"          target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/youssefsabry"  target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-img-area">
+          <div class="img-wrapper">
+            <img src="image/profile.jpg" alt="Yousef Sabry" />
+          </div>
+          <!-- floating badges -->
+          <div class="badge badge-1"><i class="fab fa-node-js"></i> Node.js</div>
+          <div class="badge badge-2"><i class="fas fa-chalkboard-teacher"></i> <span data-en="Trainer" data-ar="مدرب">Trainer</span></div>
+          <div class="badge badge-3"><i class="fas fa-star"></i> 5.0</div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint">
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+        <p data-en="Scroll to explore" data-ar="اكتشف المزيد">Scroll to explore</p>
+      </div>
+    </header>
+
+
+
+    <!-- ===== PACKAGES ===== -->
+    <section id="services" class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-en="Packages" data-ar="الباقات">Packages</h2>
+        </div>
+        <p class="section-sub" data-en="Choose the plan that fits your goals. All packages include direct communication and fast delivery." data-ar="اختر الباقة المناسبة لهدفك. كل الباقات تشمل تواصلاً مباشراً، تنفيذاً منظماً، وتسليماً واضحاً.">Choose the plan that fits your goals. All packages include direct communication and fast delivery.</p>
+        <div class="packages-grid">
+
+          <!-- STARTER -->
+          <div class="package-card glass-card">
+            <div class="pkg-header">
+              <span class="pkg-badge" data-en="Starter" data-ar="المبتدئ">Starter</span>
+              <div class="pkg-icon"><i class="fas fa-rocket"></i></div>
+              <div class="pkg-price" data-en="Contact <span>for price</span>" data-ar="تواصل <span>للسعر</span>">Contact <span>for price</span></div>
+            </div>
+            <ul class="pkg-features">
+              <li><i class="fas fa-check"></i><span data-en="Simple REST API (CRUD)" data-ar="API بسيطة (CRUD)">Simple REST API (CRUD)</span></li>
+              <li><i class="fas fa-check"></i><span data-en="User Authentication (JWT)" data-ar="مصادقة المستخدم (JWT)">User Authentication (JWT)</span></li>
+              <li><i class="fas fa-check"></i><span data-en="MongoDB or MySQL Database" data-ar="قاعدة بيانات MongoDB أو MySQL">MongoDB or MySQL Database</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Basic Error Handling" data-ar="معالجة الأخطاء الأساسية">Basic Error Handling</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Postman Collection Included" data-ar="توثيق Postman مرفق">Postman Collection Included</span></li>
+              <li class="faded"><i class="fas fa-times"></i><span data-en="Deployment on VPS" data-ar="نشر على VPS">Deployment on VPS</span></li>
+              <li class="faded"><i class="fas fa-times"></i><span data-en="Admin Dashboard" data-ar="لوحة تحكم">Admin Dashboard</span></li>
+              <li class="faded"><i class="fas fa-times"></i><span data-en="Advanced Security" data-ar="أمان متقدم">Advanced Security</span></li>
+            </ul>
+
+          </div>
+
+          <!-- PROFESSIONAL (FEATURED) -->
+          <div class="package-card glass-card featured">
+            <div class="pkg-popular" data-en="Most Popular ⭐" data-ar="الأكثر طلباً ⭐">Most Popular ⭐</div>
+            <div class="pkg-header">
+              <span class="pkg-badge" data-en="Professional" data-ar="الاحترافي">Professional</span>
+              <div class="pkg-icon"><i class="fas fa-layer-group"></i></div>
+              <div class="pkg-price" data-en="Contact <span>for price</span>" data-ar="تواصل <span>للسعر</span>">Contact <span>for price</span></div>
+            </div>
+            <ul class="pkg-features">
+              <li><i class="fas fa-check"></i><span data-en="Full Backend System" data-ar="نظام باك إند كامل">Full Backend System</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Role-Based Access Control" data-ar="صلاحيات متعددة للمستخدمين">Role-Based Access Control</span></li>
+              <li><i class="fas fa-check"></i><span data-en="File Uploads (Cloudinary / Local)" data-ar="رفع الملفات (Cloudinary / محلي)">File Uploads (Cloudinary / Local)</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Advanced Security &amp; Validation" data-ar="أمان وتحقق متقدم">Advanced Security &amp; Validation</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Deployment on VPS + Nginx" data-ar="نشر على VPS + Nginx">Deployment on VPS + Nginx</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Custom Domain + SSL" data-ar="دومين مخصص + SSL">Custom Domain + SSL</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Postman Docs Included" data-ar="توثيق Postman مرفق">Postman Docs Included</span></li>
+            </ul>
+
+          </div>
+
+          <!-- PREMIUM -->
+          <div class="package-card glass-card">
+            <div class="pkg-header">
+              <span class="pkg-badge" data-en="Premium" data-ar="المتميز">Premium</span>
+              <div class="pkg-icon"><i class="fas fa-crown"></i></div>
+              <div class="pkg-price" data-en="Contact <span>for price</span>" data-ar="تواصل <span>للسعر</span>">Contact <span>for price</span></div>
+            </div>
+            <ul class="pkg-features">
+              <li><i class="fas fa-check"></i><span data-en="Everything in Professional" data-ar="كل ما في الاحترافي">Everything in Professional</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Admin Dashboard (Full)" data-ar="لوحة تحكم كاملة">Admin Dashboard (Full)</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Payment Integration" data-ar="تكامل الدفع الإلكتروني">Payment Integration</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Email Notifications System" data-ar="نظام إشعارات البريد">Email Notifications System</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Real-Time Features (Socket.io)" data-ar="ميزات في الوقت الفعلي (Socket.io)">Real-Time Features (Socket.io)</span></li>
+              <li><i class="fas fa-check"></i><span data-en="30-Day Post-Launch Support" data-ar="دعم 30 يوماً بعد التسليم">30-Day Post-Launch Support</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Priority Delivery" data-ar="تسليم بالأولوية">Priority Delivery</span></li>
+              <li><i class="fas fa-check"></i><span data-en="Full Source Code &amp; Documentation" data-ar="كود كامل وتوثيق شامل">Full Source Code &amp; Documentation</span></li>
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-en="Skills &amp; Expertise" data-ar="المهارات والخبرات">Skills &amp; Expertise</h2>
+        </div>
+
+        <div class="glass-card" style="animation-delay: 0.2s">
+          <h3 class="skill-category-title">
+            <i class="fas fa-globe"></i>
+            <span data-en="Backend Development" data-ar="تطوير الباك إند">Backend Development</span>
+          </h3>
+          <div class="skills-grid">
+            <div class="skill-box" data-tilt><i class="fab fa-node-js"></i><span>Node.js</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-server"></i><span>Express.js</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-database"></i><span>MongoDB</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-database"></i><span>MySQL</span></div>
+            <div class="skill-box" data-tilt><i class="fab fa-js"></i><span>JavaScript</span></div>
+            <div class="skill-box" data-tilt><i class="fab fa-html5"></i><span>HTML5</span></div>
+            <div class="skill-box" data-tilt><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+            <div class="skill-box" data-tilt><i class="fab fa-git-alt"></i><span>GitHub</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-cloud-upload-alt"></i><span data-en="Deployment" data-ar="النشر">Deployment</span></div>
+            <div class="skill-box" data-tilt><i class="fas fa-lock"></i><span>JWT / Auth</span></div>
+          </div>
+        </div>
+
+        <div class="glass-card training-card" style="animation-delay: 0.4s">
+          <h3 class="skill-category-title">
+            <i class="fas fa-handshake"></i>
+            <span data-en="Soft Skills, Freelance &amp; Coaching" data-ar="تدريب Soft Skills وفريلانس وكوتشينج">Soft Skills, Freelance &amp; Coaching</span>
+          </h3>
+          <p class="training-summary"
+            data-en="In the first DEPI round, 74 students graduated with a 100% success rate. Graduation required every student to complete 3 freelance gigs, and the cohort reached a combined $5,000 in earnings."
+            data-ar="في أول راوند تدريب داخل DEPI، تخرج معي 74 طالب بنسبة نجاح 100%. كان شرط التخرج أن يحقق كل طالب 3 جيجز فريلانس، ووصل إجمالي أرباح الطلاب إلى 5000 دولار.">
+            In the first DEPI round, 74 students graduated with a 100% success rate. Graduation required every student to complete 3 freelance gigs, and the cohort reached a combined $5,000 in earnings.
+          </p>
+          <div class="training-metrics">
+            <div><strong>74</strong><span data-en="DEPI Graduates" data-ar="خريج من DEPI">DEPI Graduates</span></div>
+            <div><strong>100%</strong><span data-en="Success Rate" data-ar="نسبة نجاح">Success Rate</span></div>
+            <div><strong>3</strong><span data-en="Gigs Required" data-ar="جيجز لكل طالب">Gigs Required</span></div>
+            <div><strong>$5K</strong><span data-en="Student Earnings" data-ar="أرباح الطلاب">Student Earnings</span></div>
+          </div>
+          <div class="training-tracks">
+            <div class="training-track">
+              <i class="fas fa-user-graduate"></i>
+              <h4 data-en="Soft Skills" data-ar="المهارات الشخصية">Soft Skills</h4>
+              <ul>
+                <li data-en="Personal branding" data-ar="بناء البراند الشخصي">Personal branding</li>
+                <li data-en="Career planning" data-ar="تخطيط المسار المهني">Career planning</li>
+                <li data-en="CV building" data-ar="كتابة CV احترافي">CV building</li>
+                <li data-en="LinkedIn profile optimization" data-ar="تحسين بروفايل LinkedIn">LinkedIn profile optimization</li>
+              </ul>
+            </div>
+            <div class="training-track">
+              <i class="fas fa-briefcase"></i>
+              <h4 data-en="Freelance" data-ar="الفريلانس">Freelance</h4>
+              <ul>
+                <li data-en="Pricing strategy" data-ar="تسعير الخدمات بثقة">Pricing strategy</li>
+                <li data-en="Negotiation methods" data-ar="التفاوض مع العملاء">Negotiation methods</li>
+                <li data-en="Khamsat &amp; Mostaql accounts" data-ar="إنشاء حسابات على خمسات ومستقل">Khamsat &amp; Mostaql accounts</li>
+                <li data-en="Freelance platforms setup" data-ar="تجهيز حسابات منصات الفريلانس">Freelance platforms setup</li>
+              </ul>
+            </div>
+            <div class="training-track">
+              <i class="fas fa-route"></i>
+              <h4 data-en="Coaching" data-ar="الكوتشينج">Coaching</h4>
+              <ul>
+                <li data-en="Client acquisition guidance" data-ar="توجيه عملي لجذب العملاء">Client acquisition guidance</li>
+                <li data-en="Proposal and offer review" data-ar="مراجعة العروض والرسائل">Proposal and offer review</li>
+                <li data-en="Follow-up until first gigs" data-ar="متابعة حتى تحقيق أول جيجز">Follow-up until first gigs</li>
+                <li data-en="Practical career direction" data-ar="توجيه مستمر للمسار المهني">Practical career direction</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-en="Featured Projects" data-ar="أبرز المشاريع">Featured Projects</h2>
+        </div>
+        <div class="projects-grid">
+
+          <div class="project-card glass-card">
+            <div class="project-img-holder project-visual ecommerce">
+              <img src="image/ecommerce.png" alt="Sabritos E-Commerce Platform" />
+              <div class="project-visual-label">Backend + AI</div>
+              <div class="project-overlay">
+                <a href="https://www.linkedin.com/posts/youssefsabry_webdevelopment-mernstack-reactjs-ugcPost-7463659169833824256-D1iU/" target="_blank" class="overlay-btn" aria-label="View Sabritos post"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-en="Sabritos E-Commerce Platform" data-ar="منصة Sabritos للتجارة الإلكترونية">Sabritos E-Commerce Platform</h3>
+              <p data-en="Backend system for an e-commerce platform with secure authentication, MongoDB products and orders, admin operations, and an AI shopping assistant that recommends products by customer needs and budget in Arabic and English." data-ar="نظام باك إند لمنصة تجارة إلكترونية يدعم المصادقة الآمنة، إدارة المنتجات والطلبات على MongoDB، عمليات لوحة التحكم، ومساعداً ذكياً يرشح المنتجات حسب احتياج وميزانية العميل بالعربية والإنجليزية.">Backend system for an e-commerce platform with secure authentication, MongoDB products and orders, admin operations, and an AI shopping assistant that recommends products by customer needs and budget in Arabic and English.</p>
+              <ul class="project-tech">
+                <li>Node.js</li><li>Express</li><li>MongoDB</li><li>Gemini AI</li><li>JWT</li><li>Bcrypt</li><li>Helmet</li><li>Rate Limit</li>
+              </ul>
+              <div class="project-links-area">
+                <a href="https://www.linkedin.com/posts/youssefsabry_webdevelopment-mernstack-reactjs-ugcPost-7463659169833824256-D1iU/" target="_blank" class="project-btn"><span data-en="View Case Study" data-ar="عرض المشروع">View Case Study</span> <i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card glass-card">
+            <div class="project-img-holder project-visual security">
+              <img src="image/school.png" alt="Secure Node.js Backend System" />
+              <div class="project-visual-label">Node.js Security</div>
+              <div class="project-overlay">
+                <a href="https://www.linkedin.com/posts/youssefsabry_nodejs-backend-websecurity-activity-7448368795401953280-YdMX" target="_blank" class="overlay-btn" aria-label="View Node.js security post"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-en="Secure Node.js Backend System" data-ar="نظام Backend آمن باستخدام Node.js">Secure Node.js Backend System</h3>
+              <p data-en="Backend security-focused project applying authentication, authorization, request protection and hardening practices to keep APIs stable and protected against common web vulnerabilities." data-ar="مشروع باك إند يركز على أمان الويب، ويطبق المصادقة والصلاحيات وحماية الطلبات وتقوية الـ APIs ضد أشهر الثغرات الشائعة.">Backend security-focused project applying authentication, authorization, request protection and hardening practices to keep APIs stable and protected against common web vulnerabilities.</p>
+              <ul class="project-tech">
+                <li>Node.js</li><li>Express</li><li>JWT</li><li>Bcrypt</li><li>Helmet</li><li>Rate Limit</li><li>XSS</li><li>NoSQL Injection</li><li>HPP</li>
+              </ul>
+              <div class="project-links-area">
+                <a href="https://www.linkedin.com/posts/youssefsabry_nodejs-backend-websecurity-activity-7448368795401953280-YdMX" target="_blank" class="project-btn"><span data-en="View Post" data-ar="عرض المنشور">View Post</span> <i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REVIEWS ===== -->
+    <section id="reviews" class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-en="What Clients Say" data-ar="آراء العملاء">What Clients Say</h2>
+        </div>
+        <div class="reviews-grid">
+
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«تسلم ايدك يارجولة على الشغل الاحترافي والتواصل اليومي ربنا يكرمك ويزيدك يامعلم»</p>
+            <div class="client-info">
+              <h5>- Wesam M. <small>(khamsat)</small></h5>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1102843" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«يوسف انسان مبدع، يستاهل التعاون والعمل .. يستاهل كل خير»</p>
+            <div class="client-info">
+              <h5>- Mohamed R. <small>(Khamsat)</small></h5>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1100816" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«مبدع»</p>
+            <div class="client-info">
+              <h5>- Anwar A. <small>(khamsat)</small></h5>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1104046" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«ما قصر معايا والله شغل جميل»</p>
+            <div class="client-info">
+              <h5>- Layan A. <small>(Mostaql)</small></h5>
+              <a href="https://mostaql.com/u/YousefSabry74/reviews/9212085" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«يعطيك العافية جهد مميز تشكر عليه وعمل احترافي وتعاون كبير منك الف شكر»</p>
+            <div class="client-info">
+              <h5>- Suleiman A. <small>(Khamsat)</small></h5>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1097442" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«تعاملت مع الاخ المحترم وكان قمة في الاخلاق والتواضع مشكور»</p>
+            <div class="client-info">
+              <h5>- Abdullah A. <small>(Khamsat)</small></h5>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1092816" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«متعاون جدا ومهتم ومتابع حتى الإنجاز ويتقبل التعديلات بصدر رحب»</p>
+            <div class="client-info">
+              <h5>- Masoud A. <small>(Khamsat)</small></h5>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1092370" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«عمل ممتاز جدا وشخص متعاون جدا جزاه الله خيرا اتمنى من الجميع التعامل معه»</p>
+            <div class="client-info">
+              <h5>- M. Lemine <small>(Khamsat)</small></h5>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1091368" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+
+          <div class="review-card glass-mini">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p dir="rtl">«شغل ممتاز وسريع، سيتم اعتماده في اعمال قادمه باذن الله، انصح بالتعاون معه»</p>
+            <div class="client-info">
+              <h5>- Arwa A. <small>(Mostaql)</small></h5>
+              <a href="https://khamsat.com/user/yousefsabri/reviews/1090260" target="_blank" class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
+        </div>
+        <div class="contact-wrapper glass-card">
+          <div class="contact-text">
+            <h3 data-en="Let's work together!" data-ar="جاهز نبدأ؟">Let's work together!</h3>
+            <p data-en="Whether you have a project in mind, need coaching, or just want to say hi — my inbox is always open. I'll get back to you as soon as possible!" data-ar="سواء لديك مشروع باك إند، تحتاج تدريباً، أو تريد استشارة سريعة — يسعدني تواصلك، وسأرد عليك في أقرب وقت.">Whether you have a project in mind, need coaching, or just want to say hi — my inbox is always open. I'll get back to you as soon as possible!</p>
+            <div class="contact-channels">
+
+
+              </a>
+              <a href="https://khamsat.com/user/yousefsabri" target="_blank" class="contact-channel khamsat">
+                <i class="fas fa-store"></i>
+                <div>
+                  <strong>Khamsat</strong>
+                  <span data-en="Order a service" data-ar="اطلب خدمة">Order a service</span>
+                </div>
+              </a>
+              <a href="https://mostaql.com/u/YousefSabry74" target="_blank" class="contact-channel mostaql">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <strong>Mostaql</strong>
+                  <span data-en="Post a project" data-ar="انشر مشروعك">Post a project</span>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/youssefsabry" target="_blank" class="contact-channel linkedin">
+                <i class="fab fa-linkedin"></i>
+                <div>
+                  <strong>LinkedIn</strong>
+                  <span data-en="Connect with me" data-ar="تواصل على لينكدإن">Connect with me</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="contact-cta">
+
+            <a href="Yousef_Sabry_CV_Updated.docx" download class="cv-btn">
+              <i class="fas fa-file-download"></i>
+              <span data-en="Download CV" data-ar="تحميل السيرة الذاتية">Download CV</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-socials">
+        <a href="https://github.com/yousefsabry74"         target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/youssefsabry" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://khamsat.com/user/yousefsabri"     target="_blank" title="Khamsat"><i class="fas fa-store"></i></a>
+      </div>
+      <p data-en="Designed &amp; Built by Yousef Sabry" data-ar="تصميم وتطوير يوسف صبري">Designed &amp; Built by Yousef Sabry</p>
+      <p class="footer-year">© 2025 — All Rights Reserved</p>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+>>>>>>> 4087015 (Update Arabic portfolio content and projects)
